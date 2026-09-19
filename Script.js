@@ -1,10 +1,10 @@
 /* ============================================
    PHILIP OLADELE — Scripts
-   Preloader + Animations + Interactions
+   Preloader (60 seconds) + Animations
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ========== PRELOADER ==========
+  // ========== PRELOADER (exactly 60 seconds) ==========
   const preloader = document.getElementById('preloader');
   const bar = document.getElementById('preloader-bar');
   const status = document.getElementById('preloader-status');
@@ -15,20 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
     'LOADING STRATEGY MODULES...',
     'CALIBRATING GROWTH ENGINE...',
     'SYNCING CLIENT RESULTS...',
+    'OPTIMIZING CONTENT PIPELINES...',
     'PREPARING YOUR EXPERIENCE...',
     'ALMOST READY...'
   ];
 
-  let progress = 0;
+  const totalDuration = 60000; // 60 seconds
+  const updateInterval = 200; // update every 200ms
+  const steps = totalDuration / updateInterval;
+  let currentStep = 0;
   let msgIndex = 0;
 
   const interval = setInterval(() => {
-    progress += Math.random() * 18 + 8;
-    if (progress > 100) progress = 100;
+    currentStep++;
+    const progress = Math.min((currentStep / steps) * 100, 100);
     bar.style.width = progress + '%';
 
-    if (progress > (msgIndex + 1) * 16 && msgIndex < messages.length - 1) {
-      msgIndex++;
+    // Change message roughly every ~8.5 seconds
+    const newMsgIndex = Math.min(Math.floor(progress / 14.3), messages.length - 1);
+    if (newMsgIndex !== msgIndex) {
+      msgIndex = newMsgIndex;
       status.textContent = messages[msgIndex];
     }
 
@@ -39,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         preloader.classList.add('hidden');
         body.classList.remove('loading');
         animateCounters();
-      }, 600);
+      }, 800);
     }
-  }, 280);
+  }, updateInterval);
 
   // ========== NAV ==========
   const navToggle = document.getElementById('nav-toggle');
