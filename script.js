@@ -1,34 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
-  const fill = document.getElementById("preloader-bar");
   const status = document.getElementById("preloader-status");
   const body = document.body;
 
-  if (preloader && fill && status) {
-    const lines = ["OPENING THE STUDIO", "PRESENTING THE THREE PRACTICES", "PREPARING THE BRIEF", "WELCOME"];
-    const duration = 6500;
-    const tick = 40;
-    const steps = duration / tick;
-    let step = 0;
-    let idx = 0;
-    const timer = setInterval(() => {
-      step += 1;
-      const p = Math.min((step / steps) * 100, 100);
-      fill.style.width = p + "%";
-      const next = Math.min(Math.floor(p / 25), lines.length - 1);
-      if (next !== idx) {
-        idx = next;
-        status.textContent = lines[idx];
-      }
-      if (p >= 100) {
-        clearInterval(timer);
-        status.textContent = "WELCOME";
+  if (preloader && status) {
+    const words = ["SOCIAL", "WEB", "BOOKS"];
+    let i = 0;
+    status.textContent = "";
+    const typeWord = () => {
+      if (i >= words.length) {
+        status.textContent = "SOCIAL · WEB · BOOKS";
         setTimeout(() => {
           preloader.classList.add("hidden");
           body.classList.remove("loading");
-        }, 600);
+        }, 900);
+        return;
       }
-    }, tick);
+      const word = words[i];
+      let c = 0;
+      status.textContent = (i ? status.textContent.replace("|","") + " · " : "");
+      const tick = setInterval(() => {
+        status.textContent = status.textContent.replace("|","") + word[c] + "|";
+        c += 1;
+        if (c >= word.length) {
+          clearInterval(tick);
+          status.textContent = status.textContent.replace("|","");
+          i += 1;
+          setTimeout(typeWord, 280);
+        }
+      }, 70);
+    };
+    setTimeout(typeWord, 700);
   }
 
   const toggle = document.getElementById("nav-toggle");
@@ -48,10 +50,7 @@ function startGoldShader() {
   const gl = canvas.getContext("webgl", { antialias: false, alpha: true });
   if (!gl) return;
 
-  const vs = `
-    attribute vec2 a;
-    void main(){ gl_Position = vec4(a,0.0,1.0); }
-  `;
+  const vs = "attribute vec2 a; void main(){ gl_Position = vec4(a,0.0,1.0); }";
   const fs = `
     precision highp float;
     uniform vec2 u_res;
