@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work — Philip Oladele</title>
+  <title>Contact — Philip Oladele</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -18,7 +18,7 @@
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
-        <li><a class="nav-link active" href="projects.html">Work</a></li>
+        <li><a class="nav-link" href="projects.html">Work</a></li>
         <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -26,59 +26,46 @@
   </header>
   <main class="section" style="padding-top:140px;">
     <div class="wrap">
-      <p class="kicker">Work</p>
-      <h1 class="display">Selected systems.</h1>
-      <div class="project-list">
-        <article class="project">
-          <div class="project-visual">Hard Guys Cry</div>
-          <div>
-            <span class="tag">Live</span>
-            <h3>Michael Vecchione</h3>
-            <p class="client">Book campaign</p>
-            <p>Trailer, landing page and social distribution for a wider audience.</p>
-          </div>
-        </article>
-        <article class="project">
-          <div class="project-visual">Nexus Author Hub</div>
-          <div>
-            <span class="tag">In progress</span>
-            <h3>Independent Author Collective</h3>
-            <p class="client">Platform</p>
-            <p>Launch pages, capture and multi-author promotion.</p>
-          </div>
-        </article>
-        <article class="project">
-          <div class="project-visual">Velocity Growth OS</div>
-          <div>
-            <span class="tag">In progress</span>
-            <h3>Agency operating system</h3>
-            <p class="client">Digital studio</p>
-            <p>Calendar, dashboard and reporting as a white-label tool.</p>
-          </div>
-        </article>
-        <article class="project">
-          <div class="project-visual">Aether</div>
-          <div>
-            <span class="tag">In progress</span>
-            <h3>Lifestyle brand site</h3>
-            <p class="client">Wellness</p>
-            <p>Story pages, community hub and search-ready structure.</p>
-          </div>
-        </article>
-        <article class="project">
-          <div class="project-visual">Pulse</div>
-          <div>
-            <span class="tag">In progress</span>
-            <h3>Creator network system</h3>
-            <p class="client">Media</p>
-            <p>Pipelines, paid social playbooks and weekly growth reviews.</p>
-          </div>
-        </article>
+      <p class="kicker">Contact</p>
+      <h1 class="display">Let us show you what we see.</h1>
+      <div class="contact-panel">
+        <p class="lede">Discuss your project. The message arrives directly in Gmail.</p>
+        <form class="form" action="https://formsubmit.co/philipteam51@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New project enquiry from website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <label for="service">Service</label>
+          <input id="service" name="service" type="text" placeholder="Social media, website, book promotion" />
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" required></textarea>
+          <button class="btn btn-gold" type="submit">Send message</button>
+        </form>
+        <div class="ways">
+          <a class="way" href="mailto:philipteam51@gmail.com">
+            <small>Email</small>
+            <span>philipteam51@gmail.com</span>
+          </a>
+          <a class="way" href="tel:+2348162287814">
+            <small>Mobile</small>
+            <span>+234 816 228 7814</span>
+          </a>
+        </div>
+        <p style="margin-top:28px;color:var(--muted);font-size:.95rem;">Trust should be earned, not requested.</p>
       </div>
     </div>
   </main>
   <footer>
-    <div class="foot"><div>Philip Oladele</div><div><a href="contact.html">Contact</a></div></div>
+    <div class="foot">
+      <div>Philip Oladele</div>
+      <div>
+        <a href="https://www.facebook.com/share/16Bh3M7yet5/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://philipoladele.my.canva.site/" target="_blank" rel="noopener">Portfolio</a>
+      </div>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>
