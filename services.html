@@ -6,14 +6,14 @@
   <title>Services — Philip Oladele</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet"  href="styles.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
-  <div class="grain"></div>
+  <div class="bg-anim"></div>
   <header class="header">
-    <nav class="nav">
-      <a class="logo" href="index.html">P. Oladele</a>
+    <nav class="nav wrap">
+      <a class="logo" href="index.html">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
@@ -24,63 +24,70 @@
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-  <main class="section" style="padding-top:140px;">
+  <main class="section page">
     <div class="wrap">
       <p class="kicker">Services</p>
-      <h1 class="display">Four practices. One system.</h1>
-      <p class="lede">Strategy, content, websites, search and book campaigns built around the same journey: stranger to advocate.</p>
-      <div class="service-stack">
-        <div class="service-row">
-          <div class="num">01</div>
+      <h2>Four practices. One growth system.</h2>
+      <p class="lede">Each service is built to move people from attention to action. Nothing is posted, designed or ranked without a job to do.</p>
+      <div class="cards" style="grid-template-columns:repeat(2,1fr)">
+        <article class="card">
+          <small>01 / Social</small>
           <h3>Social media management</h3>
-          <p>Audience research, calendars, captions, community and reporting. Growth with a point of view.</p>
-          <span class="more">Core</span>
-        </div>
-        <div class="service-row">
-          <div class="num">02</div>
+          <p>A coordinated presence across the platforms that matter to your buyer.</p>
+          <ul>
+            <li>Audience research and positioning</li>
+            <li>Content calendars and caption systems</li>
+            <li>Graphics and short-form video</li>
+            <li>Community management</li>
+            <li>Monthly performance reporting</li>
+          </ul>
+        </article>
+        <article class="card">
+          <small>02 / Web</small>
           <h3>Website design</h3>
-          <p>Responsive sites and landing pages that look considered and convert with a clear next step.</p>
-          <span class="more">Core</span>
-        </div>
-        <div class="service-row">
-          <div class="num">03</div>
+          <p>Sites that look considered and ask for the next step without noise.</p>
+          <ul>
+            <li>Custom responsive design</li>
+            <li>Landing pages for launches and leads</li>
+            <li>Brand identity integration</li>
+            <li>Mobile-first performance</li>
+            <li>SEO-ready structure</li>
+          </ul>
+        </article>
+        <article class="card">
+          <small>03 / Search</small>
           <h3>SEO</h3>
-          <p>Keyword work, on-page structure and reporting so the right people can find you.</p>
-          <span class="more">Core</span>
-        </div>
-        <div class="service-row">
-          <div class="num">04</div>
+          <p>Technical and content work so the right people can find you.</p>
+          <ul>
+            <li>Keyword research and mapping</li>
+            <li>On-page and technical SEO</li>
+            <li>Content optimization</li>
+            <li>Competitor analysis</li>
+            <li>Monthly reporting</li>
+          </ul>
+        </article>
+        <article class="card">
+          <small>04 / Books</small>
           <h3>Book promotion</h3>
-          <p>Trailers, launch campaigns, ads and long-term author branding.</p>
-          <span class="more">Core</span>
-        </div>
+          <p>Campaigns built for authors, not generic brands.</p>
+          <ul>
+            <li>Book trailer production</li>
+            <li>Launch calendars and ads</li>
+            <li>Author social systems</li>
+            <li>Amazon and platform visibility</li>
+            <li>Long-term author branding</li>
+          </ul>
+        </article>
       </div>
-      <div class="contact-panel" style="margin-top:56px;" id="discuss">
-        <p class="kicker">Discuss your project</p>
-        <h2 class="display" style="font-size:2rem;">Tell us what you want built.</h2>
-        <form class="form" action="https://formsubmit.co/philipteam51@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New project enquiry from website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required />
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required />
-          <label for="service">Service</label>
-          <input id="service" name="service" type="text" placeholder="Social media, website, book promotion" />
-          <label for="message">Project details</label>
-          <textarea id="message" name="message" required></textarea>
-          <button class="btn btn-gold" type="submit">Send message</button>
-        </form>
-      </div>
+      <p style="margin-top:40px;"><a class="btn btn-gold" href="contact.html">Begin a conversation</a></p>
     </div>
   </main>
   <footer>
-    <div class="foot">
+    <div class="foot wrap">
       <div>Philip Oladele</div>
-      <div><a href="contact.html">Contact</a></div>
+      <div><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Work</a><a href="contact.html">Begin</a></div>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
