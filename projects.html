@@ -3,70 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Philip Oladele</title>
+  <title>Work — Philip Oladele</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
-  <div class="grain"></div>
+  <div class="bg-anim"></div>
   <header class="header">
-    <nav class="nav">
-      <a class="logo" href="index.html">P. Oladele</a>
+    <nav class="nav wrap">
+      <a class="logo" href="index.html">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
-        <li><a class="nav-link" href="projects.html">Work</a></li>
+        <li><a class="nav-link active" href="projects.html">Work</a></li>
         <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-  <main class="section" style="padding-top:140px;">
+  <main class="section page">
     <div class="wrap">
-      <p class="kicker">Contact</p>
-      <h1 class="display">Let us show you what we see.</h1>
-      <div class="contact-panel">
-        <p class="lede">Discuss your project. The message arrives directly in Gmail.</p>
-        <form class="form" action="https://formsubmit.co/philipteam51@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New project enquiry from website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required />
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required />
-          <label for="service">Service</label>
-          <input id="service" name="service" type="text" placeholder="Social media, website, book promotion" />
-          <label for="message">Project details</label>
-          <textarea id="message" name="message" required></textarea>
-          <button class="btn btn-gold" type="submit">Send message</button>
-        </form>
-        <div class="ways">
-          <a class="way" href="mailto:philipteam51@gmail.com">
-            <small>Email</small>
-            <span>philipteam51@gmail.com</span>
-          </a>
-          <a class="way" href="tel:+2348162287814">
-            <small>Mobile</small>
-            <span>+234 816 228 7814</span>
-          </a>
-        </div>
-        <p style="margin-top:28px;color:var(--muted);font-size:.95rem;">Trust should be earned, not requested.</p>
+      <p class="kicker">Work</p>
+      <h2>Selected systems</h2>
+      <div class="work">
+        <article>
+          <img src="hard-guys-cry.jpg" alt="Hard Guys Cry by Michael Vecchione">
+          <div class="copy"><span class="tag">Live</span><h3>Hard Guys Cry</h3><p>Michael Vecchione. Book campaign with trailer, landing page and social distribution for the Jimmy Dennedy story.</p></div>
+        </article>
+        <article>
+          <img src="nexus-hub.jpg" alt="Nexus Author Hub">
+          <div class="copy"><span class="tag">In progress</span><h3>Nexus Author Hub</h3><p>Multi-author platform with launch pages, trailer modules and newsletter capture.</p></div>
+        </article>
+        <article>
+          <img src="velocity-os.jpg" alt="Velocity Growth OS">
+          <div class="copy"><span class="tag">In progress</span><h3>Velocity Growth OS</h3><p>Internal growth system: calendar, dashboard, pipeline and client reporting.</p></div>
+        </article>
       </div>
     </div>
   </main>
   <footer>
-    <div class="foot">
+    <div class="foot wrap">
       <div>Philip Oladele</div>
-      <div>
-        <a href="https://www.facebook.com/share/16Bh3M7yet5/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://philipoladele.my.canva.site/" target="_blank" rel="noopener">Portfolio</a>
-      </div>
+      <div><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Work</a><a href="contact.html">Begin</a></div>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
