@@ -3,112 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | Philip Oladele</title>
-  <meta name="description" content="Social media management, website design, SEO and book promotion services by Philip Oladele." />
+  <title>Services — Philip Oladele</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">Philip <span>Oladele</span></a>
+  <div class="grain"></div>
+  <header class="header">
+    <nav class="nav">
+      <a class="logo" href="index.html">P. Oladele</a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link active">Services</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="contact.html" class="nav-link nav-cta">Start a conversation</a></li>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link active" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="projects.html">Work</a></li>
+        <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-
-  <main style="padding-top:120px;">
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Services</span>
-          <h1 class="section-title">A complete system built around your brand and goals</h1>
-          <p class="section-desc">Four focused services that work together.</p>
+  <main class="section" style="padding-top:140px;">
+    <div class="wrap">
+      <p class="kicker">Services</p>
+      <h1 class="display">Four practices. One system.</h1>
+      <p class="lede">Strategy, content, websites, search and book campaigns built around the same journey: stranger to advocate.</p>
+      <div class="service-stack">
+        <div class="service-row">
+          <div class="num">01</div>
+          <h3>Social media management</h3>
+          <p>Audience research, calendars, captions, community and reporting. Growth with a point of view.</p>
+          <span class="more">Core</span>
         </div>
-
-        <div class="services-grid">
-          <div class="card service-card">
-            <h3>Social Media Management</h3>
-            <p>Full-service strategy, content creation, community management and growth systems that turn followers into customers.</p>
-            <ul>
-              <li>Social media strategy and audience research</li>
-              <li>Content creation and caption writing</li>
-              <li>Graphics and short-form video</li>
-              <li>Content calendar and platform optimization</li>
-              <li>Community management</li>
-              <li>Performance reporting</li>
-            </ul>
-          </div>
-          <div class="card service-card">
-            <h3>Website Design</h3>
-            <p>Modern, fully responsive, conversion-focused websites that look premium and perform well.</p>
-            <ul>
-              <li>Custom responsive design</li>
-              <li>Clear user journeys</li>
-              <li>Landing pages optimized for leads</li>
-              <li>Brand identity integration</li>
-              <li>Mobile-first and performance focused</li>
-              <li>SEO-ready structure</li>
-            </ul>
-          </div>
-          <div class="card service-card">
-            <h3>SEO</h3>
-            <p>Get found by the right people through technical and content work that ranks and converts.</p>
-            <ul>
-              <li>Keyword research and strategy</li>
-              <li>On-page and technical SEO</li>
-              <li>Content optimization</li>
-              <li>Local and broader search</li>
-              <li>Competitor analysis</li>
-              <li>Monthly reporting</li>
-            </ul>
-          </div>
-          <div class="card service-card">
-            <h3>Book Promotion</h3>
-            <p>Specialized marketing for authors. Trailers, campaigns and systems that put books in front of readers.</p>
-            <ul>
-              <li>Book trailer production</li>
-              <li>Author social media management</li>
-              <li>Launch campaigns and ads</li>
-              <li>Visibility strategies</li>
-              <li>Amazon and platform promotion</li>
-              <li>Long-term author branding</li>
-            </ul>
-          </div>
+        <div class="service-row">
+          <div class="num">02</div>
+          <h3>Website design</h3>
+          <p>Responsive sites and landing pages that look considered and convert with a clear next step.</p>
+          <span class="more">Core</span>
         </div>
-
-        <div style="text-align:center;margin-top:56px;">
-          <a href="contact.html" class="btn btn-primary">Discuss your project</a>
+        <div class="service-row">
+          <div class="num">03</div>
+          <h3>SEO</h3>
+          <p>Keyword work, on-page structure and reporting so the right people can find you.</p>
+          <span class="more">Core</span>
+        </div>
+        <div class="service-row">
+          <div class="num">04</div>
+          <h3>Book promotion</h3>
+          <p>Trailers, launch campaigns, ads and long-term author branding.</p>
+          <span class="more">Core</span>
         </div>
       </div>
-    </section>
+      <div class="contact-panel" style="margin-top:56px;" id="discuss">
+        <p class="kicker">Discuss your project</p>
+        <h2 class="display" style="font-size:2rem;">Tell us what you want built.</h2>
+        <form class="form" action="https://formsubmit.co/philipteam51@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New project enquiry from website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <label for="service">Service</label>
+          <input id="service" name="service" type="text" placeholder="Social media, website, book promotion" />
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" required></textarea>
+          <button class="btn btn-gold" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-brand">Philip <span>Oladele</span></div>
-          <p style="color:var(--text-muted);font-size:0.9rem;">Social Media Strategist & Growth Partner</p>
-        </div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-          <a href="https://www.facebook.com/share/16Bh3M7yet5/" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://philipoladele.my.canva.site/" target="_blank" rel="noopener">Portfolio</a>
-        </div>
-      </div>
-      <div class="footer-bottom"><p>© 2026 Philip Oladele. All rights reserved.</p></div>
+  <footer>
+    <div class="foot">
+      <div>Philip Oladele</div>
+      <div><a href="contact.html">Contact</a></div>
     </div>
   </footer>
   <script src="script.js"></script>
