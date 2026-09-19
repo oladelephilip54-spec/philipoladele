@@ -9,48 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=13" />
-  <style>
-    #preloader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 42%,#ffe7a3 0%,#d4a017 42%,#7a520c 100%);color:#2a1b05;font-family:Outfit,system-ui,sans-serif}
-    #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .9s ease,visibility .9s ease}
-    .orbit{position:absolute;width:min(540px,82vw);height:min(540px,82vw);border-radius:50%;border:1px solid rgba(255,236,180,.35);box-shadow:0 0 40px rgba(255,214,110,.35),inset 0 0 50px rgba(255,236,180,.12)}
-    .orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%}
-    .orbit:before{width:14px;height:14px;background:#fff6d2;box-shadow:0 0 18px 6px rgba(255,230,150,.9);top:50%;left:-7px;transform-origin:277px 7px;animation:orbit 4.2s linear infinite}
-    .orbit:after{width:8px;height:8px;background:#ffe08a;box-shadow:0 0 12px 4px rgba(255,214,110,.8);top:50%;right:-4px;transform-origin:-263px 4px;animation:orbit 6s linear infinite reverse}
-    @keyframes orbit{to{transform:rotate(1turn)}}
-    .gold-orb{position:absolute;border-radius:50%;filter:blur(20px);pointer-events:none;animation:hoverGold 8s ease-in-out infinite}
-    .gold-orb.a{width:240px;height:240px;background:rgba(255,236,170,.5);top:6%;left:6%}
-    .gold-orb.b{width:280px;height:280px;background:rgba(255,210,90,.4);bottom:4%;right:8%;animation-delay:1.2s}
-    @keyframes hoverGold{50%{transform:translate(18px,-14px) scale(1.06)}}
-    .pload{position:relative;z-index:2;width:min(420px,86vw);text-align:center}
-    .pload b{display:block;letter-spacing:.28em;text-transform:uppercase;font-size:10px;margin-bottom:8px}
-    .pload h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2rem,6vw,3.1rem);font-weight:500;margin-bottom:6px;text-shadow:0 0 20px rgba(255,236,180,.7)}
-    .pload>p{font-size:.92rem;margin-bottom:16px}
-    .g3{display:grid;gap:8px;margin:0 auto 16px;max-width:360px}
-    .g3 article{background:rgba(255,248,220,.32);border:1px solid rgba(255,220,140,.5);padding:10px 12px;text-align:left;box-shadow:0 0 16px rgba(255,214,110,.28)}
-    .g3 small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
-    .g3 h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.05rem;margin:2px 0}
-    .g3 p{font-size:.78rem;line-height:1.35}
-    .bar{height:2px;width:180px;margin:0 auto 8px;background:rgba(40,24,4,.2);overflow:hidden}
-    .bar>i{display:block;height:100%;width:0;background:#2a1b05}
-  </style>
-</head>
-<body class="loading">
-  <div class="bg-anim"></div>
   <div id="preloader">
-    <div class="gold-orb a"></div>
-    <div class="gold-orb b"></div>
-    <div class="orbit"></div>
-    <div class="pload">
-      <b>Three flagship practices</b>
-      <h2>Philip Oladele</h2>
-      <p>Social. Web. Books. One growth system.</p>
-      <div class="g3">
-        <article><small>01</small><h3>Social Media Management</h3><p>Strategy, content and community that turn attention into leads.</p></article>
-        <article><small>02</small><h3>Website Design and SEO</h3><p>Premium sites built to be found, understood and trusted.</p></article>
-        <article><small>03</small><h3>Book Promotion</h3><p>Trailers, launches and campaigns that put authors in front of readers.</p></article>
-      </div>
-      <div class="bar"><i id="preloader-bar"></i></div>
-      <small id="preloader-status">OPENING THE STUDIO</small>
+    <div class="intro">
+      <div class="ring"></div>
+      <div class="ring spin"></div>
+      <div class="core"></div>
+      <div class="mark">PO</div>
+    </div>
+    <div class="intro-copy">
+      <b>Philip Oladele</b>
+      <span id="preloader-status">SOCIAL · WEB · BOOKS</span>
+      <i id="preloader-bar" style="display:none"></i>
     </div>
   </div>
   <header class="header">
