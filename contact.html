@@ -3,94 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Philip Oladele</title>
-  <meta name="description" content="Start a conversation with Philip Oladele. Free social media scorecard available." />
+  <title>Contact — Philip Oladele</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">Philip <span>Oladele</span></a>
+  <div class="grain"></div>
+  <header class="header">
+    <nav class="nav">
+      <a class="logo" href="index.html">P. Oladele</a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="contact.html" class="nav-link nav-cta">Start a conversation</a></li>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="projects.html">Work</a></li>
+        <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-
-  <main style="padding-top:120px;">
-    <section class="section">
-      <div class="container">
-        <div class="contact-box">
-          <span class="section-eyebrow">Contact</span>
-          <h1 class="section-title">Not ready to commit yet?</h1>
-          <p class="section-desc" style="margin-bottom:12px;">
-            You do not have to believe us yet. Let us show you what we see.
-          </p>
-
-          <div class="card" style="text-align:left;margin:40px 0;padding:28px;">
-            <h3 style="font-size:1.1rem;margin-bottom:12px;">Free Social Media Scorecard</h3>
-            <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">We review your current presence and identify:</p>
-            <ul style="list-style:none;color:var(--text-muted);font-size:0.9rem;">
-              <li style="padding:4px 0;">• What is working</li>
-              <li style="padding:4px 0;">• Where you are losing attention</li>
-              <li style="padding:4px 0;">• Your biggest growth opportunity</li>
-              <li style="padding:4px 0;">• Content opportunities</li>
-              <li style="padding:4px 0;">• What we would prioritize first</li>
-            </ul>
-            <p style="margin-top:16px;font-size:0.9rem;color:var(--text-secondary);">15-minute strategy conversation. No obligation.</p>
-          </div>
-
-          <div style="margin-bottom:32px;">
-            <img src="philip-oladele.jpg" alt="Philip Oladele" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 12px;border:1px solid var(--border);" />
-            <p style="font-weight:600;">Philip Oladele</p>
-            <p style="font-size:0.9rem;color:var(--text-muted);">Social Media Strategist & Growth Partner</p>
-          </div>
-
-          <div class="contact-methods">
-            <a href="mailto:philipteam51@gmail.com" class="contact-link">
-              <span class="label">Email</span>
-              <span class="value">philipteam51@gmail.com</span>
-            </a>
-            <a href="tel:+2348162287814" class="contact-link">
-              <span class="label">Mobile</span>
-              <span class="value">+234 816 228 7814</span>
-            </a>
-          </div>
-
-          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;">
-            Your success as a brand is directly proportional to our success as your partner.<br>
-            Trust should be earned, not requested.
-          </p>
+  <main class="section" style="padding-top:140px;">
+    <div class="wrap">
+      <p class="kicker">Contact</p>
+      <h1 class="display">Let us show you what we see.</h1>
+      <div class="contact-panel">
+        <p class="lede">Discuss your project. The message arrives directly in Gmail.</p>
+        <form class="form" action="https://formsubmit.co/philipteam51@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New project enquiry from website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <label for="service">Service</label>
+          <input id="service" name="service" type="text" placeholder="Social media, website, book promotion" />
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" required></textarea>
+          <button class="btn btn-gold" type="submit">Send message</button>
+        </form>
+        <div class="ways">
+          <a class="way" href="mailto:philipteam51@gmail.com">
+            <small>Email</small>
+            <span>philipteam51@gmail.com</span>
+          </a>
+          <a class="way" href="tel:+2348162287814">
+            <small>Mobile</small>
+            <span>+234 816 228 7814</span>
+          </a>
         </div>
+        <p style="margin-top:28px;color:var(--muted);font-size:.95rem;">Trust should be earned, not requested.</p>
       </div>
-    </section>
+    </div>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-brand">Philip <span>Oladele</span></div>
-          <p style="color:var(--text-muted);font-size:0.9rem;">Social Media Strategist & Growth Partner</p>
-        </div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-          <a href="https://www.facebook.com/share/16Bh3M7yet5/" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://philipoladele.my.canva.site/" target="_blank" rel="noopener">Portfolio</a>
-        </div>
+  <footer>
+    <div class="foot">
+      <div>Philip Oladele</div>
+      <div>
+        <a href="https://www.facebook.com/share/16Bh3M7yet5/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://philipoladele.my.canva.site/" target="_blank" rel="noopener">Portfolio</a>
       </div>
-      <div class="footer-bottom"><p>© 2026 Philip Oladele. All rights reserved.</p></div>
     </div>
   </footer>
   <script src="script.js"></script>
