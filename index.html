@@ -3,43 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philip Oladele — Social Media Strategist</title>
-  <meta name="description" content="Philip Oladele: social media management, website design, SEO and book promotion." />
+  <title>Philip Oladele — Social Media Strategist & Growth Partner</title>
+  <meta name="description" content="Philip Oladele builds social media systems, websites, SEO and book campaigns that turn attention into clients. Strategy for brands and authors." />
+  <meta name="theme-color" content="#050403" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="styles.css?v=20" />
   <style>
-    #preloader{position:fixed;inset:0;z-index:9999;overflow:hidden;background:#070604;color:#f6de9a;font-family:Outfit,system-ui,sans-serif}
-    #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s ease,transform .8s ease;transform:translateY(-12%)}
-    .stage{position:absolute;inset:0}
-    .stage img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:grayscale(.15) contrast(1.05);transform:scale(1.06);animation:zoom 5s ease forwards}
-    .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,4,.35),rgba(7,6,4,.72) 70%)}
-    .frame{position:absolute;inset:28px;border:1px solid transparent;animation:frameDraw 1.4s ease forwards .2s;pointer-events:none}
-    .copy{position:absolute;left:0;right:0;bottom:11%;text-align:center;padding:0 20px}
-    .copy b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2rem,6vw,3.4rem);font-weight:500;color:#f8f1e3;margin-bottom:10px;opacity:0;animation:fadeUp .7s ease forwards .4s}
-    .type{min-height:1.4em;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:#f6de9a}
-    @keyframes zoom{to{transform:scale(1)}}
-    @keyframes frameDraw{to{border-color:rgba(246,222,154,.85);box-shadow:0 0 40px rgba(227,183,90,.18)}}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    #preloader {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      background: #050403; color: #f0d9a0;
+      font-family: Outfit, system-ui, sans-serif;
+      transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), visibility 0.9s;
+    }
+    #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-inner { text-align: center; position: relative; width: min(320px, 86vw); }
+    .loader-ring { width: 88px; height: 88px; margin: 0 auto 28px; position: relative; }
+    .loader-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .loader-ring circle { fill: none; stroke-width: 2; }
+    .loader-ring .track { stroke: rgba(212,175,106,0.15); }
+    .loader-ring .progress {
+      stroke: #f0d9a0; stroke-linecap: round;
+      stroke-dasharray: 251.2; stroke-dashoffset: 251.2;
+      transition: stroke-dashoffset 0.15s linear;
+      filter: drop-shadow(0 0 8px rgba(240,217,160,0.5));
+    }
+    .loader-pct {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.35rem; color: #f5efe3; font-weight: 500;
+    }
+    .loader-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 500;
+      color: #f5efe3; margin-bottom: 10px;
+      opacity: 0; animation: loadFade 0.7s 0.2s forwards;
+    }
+    .loader-line {
+      font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: #d4af6a; min-height: 1.4em;
+    }
+    .loader-bar {
+      height: 1px; width: 100%; margin-top: 22px;
+      background: rgba(212,175,106,0.15); overflow: hidden;
+    }
+    .loader-bar i {
+      display: block; height: 100%; width: 0;
+      background: linear-gradient(90deg, #a67c3d, #f0d9a0);
+      box-shadow: 0 0 12px rgba(240,217,160,0.4);
+    }
+    @keyframes loadFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body class="loading">
-  <div class="bg-anim"></div>
-  <div id="preloader">
-    <div class="stage">
-      <img src="philip-oladele.jpg" alt="Philip Oladele">
-      <div class="veil"></div>
-      <div class="frame"></div>
-    </div>
-    <div class="copy">
-      <b>Philip Oladele</b>
-      <div class="type" id="preloader-status"></div>
-      <i id="preloader-bar" style="display:none"></i>
+  <div class="bg-layer"></div>
+  <div id="preloader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-ring">
+        <svg viewBox="0 0 88 88">
+          <circle class="track" cx="44" cy="44" r="40"></circle>
+          <circle class="progress" id="loader-circle" cx="44" cy="44" r="40"></circle>
+        </svg>
+        <div class="loader-pct" id="loader-pct">0</div>
+      </div>
+      <div class="loader-name">Philip Oladele</div>
+      <div class="loader-line" id="preloader-status">Preparing the studio</div>
+      <div class="loader-bar"><i id="preloader-bar"></i></div>
     </div>
   </div>
-
-  <header class="header">
+  <header class="header" id="site-header">
     <nav class="nav wrap">
       <a class="logo" href="index.html">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
@@ -52,13 +90,12 @@
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
-
   <main>
     <section class="hero wrap">
-      <div>
+      <div class="reveal">
         <p class="kicker">Social Media Strategist and Growth Partner</p>
         <h1>Turn attention into <span>trust and clients</span></h1>
-        <p>I build the system behind the posts: strategy, content, websites, search and book campaigns.</p>
+        <p>I build the system behind the posts: strategy, content, websites, search and book campaigns for brands and authors who refuse to look average online.</p>
         <div class="actions">
           <a class="btn btn-gold" href="contact.html">Discuss your project</a>
           <a class="btn btn-line" href="projects.html">See the work</a>
@@ -69,112 +106,105 @@
           <div><b>109K+</b><span>Views</span></div>
         </div>
       </div>
-      <div class="photo"><img src="philip-oladele.jpg" alt="Philip Oladele" /></div>
+      <div class="photo reveal reveal-delay-2">
+        <img src="philip-oladele.jpg" alt="Philip Oladele" />
+      </div>
     </section>
-
     <div class="band" aria-hidden="true">
       <div class="band-track">
         <span>Social Media</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
+        <span>Brand Systems</span><span>Growth Strategy</span>
         <span>Social Media</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
-        <span>Social Media</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
-        <span>Social Media</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
+        <span>Brand Systems</span><span>Growth Strategy</span>
       </div>
     </div>
-
     <section class="section">
       <div class="wrap">
-        <p class="kicker">The calling</p>
-        <h2>This is not a posting service</h2>
+        <p class="kicker reveal">The calling</p>
+        <h2 class="reveal">This is not a posting service</h2>
         <div class="split">
-          <p class="lede">I am Philip Oladele, a certified professional social media strategist. I make things happen, and I am good at what I do. I am here to understand the brand, see where it can go, and make that vision real.</p>
-          <p class="lede">Good businesses often look invisible online. Inconsistent content and unclear messaging make a strong brand look weaker than it is. The work is to make you easier to discover, understand, trust and contact.</p>
+          <p class="lede reveal">I am Philip Oladele, a certified professional social media strategist. I make things happen, and I am good at what I do. I am here to understand the brand, see where it can go, and make that vision real.</p>
+          <p class="lede reveal reveal-delay-1">Good businesses often look invisible online. Inconsistent content and unclear messaging make a strong brand look weaker than it is. The work is to make you easier to discover, understand, trust and contact.</p>
         </div>
       </div>
     </section>
-
-    <section class="section" style="background:#0d0b07;">
+    <section class="section" style="background:#0a0806;">
       <div class="wrap">
-        <p class="kicker">The system</p>
-        <h2>Attention. Trust. Conversion.</h2>
+        <p class="kicker reveal">The system</p>
+        <h2 class="reveal">Attention. Trust. Conversion.</h2>
         <div class="cards">
-          <article class="card"><small>01</small><h3>Attention</h3><p>Earn the scroll with work that has a job. Content that is planned, designed and published with a point of view.</p></article>
-          <article class="card"><small>02</small><h3>Trust</h3><p>Show expertise, personality and proof so people believe the brand before they buy.</p></article>
-          <article class="card"><small>03</small><h3>Conversion</h3><p>Give interested people a clear next step: a page, a message, a call, a book, a sale.</p></article>
+          <article class="card reveal"><small>01</small><h3>Attention</h3><p>Earn the scroll with work that has a job. Content planned, designed and published with a clear point of view.</p></article>
+          <article class="card reveal reveal-delay-1"><small>02</small><h3>Trust</h3><p>Show expertise, personality and proof so people believe the brand before they buy.</p></article>
+          <article class="card reveal reveal-delay-2"><small>03</small><h3>Conversion</h3><p>Give interested people a clear next step: a page, a message, a call, a book, a sale.</p></article>
         </div>
       </div>
     </section>
-
     <section class="section">
       <div class="wrap">
-        <p class="kicker">Practices</p>
-        <h2>What we run every week</h2>
+        <p class="kicker reveal">Practices</p>
+        <h2 class="reveal">What we run every week</h2>
         <div class="cards">
-          <article class="card"><small>Social</small><h3>Social media management</h3><p>Audience research, calendars, captions, graphics, community and monthly reporting.</p></article>
-          <article class="card"><small>Web</small><h3>Website design</h3><p>Responsive sites and landing pages that look considered and ask for the next step.</p></article>
-          <article class="card"><small>Search</small><h3>SEO</h3><p>Keyword work, on-page structure and reporting so the right people can find you.</p></article>
+          <article class="card reveal"><small>Social</small><h3>Social media management</h3><p>Audience research, calendars, captions, graphics, community and monthly reporting.</p></article>
+          <article class="card reveal reveal-delay-1"><small>Web</small><h3>Website design</h3><p>Responsive sites and landing pages that look considered and ask for the next step.</p></article>
+          <article class="card reveal reveal-delay-2"><small>Search</small><h3>SEO</h3><p>Keyword work, on-page structure and reporting so the right people can find you.</p></article>
         </div>
-        <div class="cards" style="margin-top:16px;">
-          <article class="card"><small>Books</small><h3>Book promotion</h3><p>Trailers, launch campaigns, ads and long-term author branding.</p></article>
-          <article class="card"><small>How we start</small><h3>Free scorecard</h3><p>Fifteen minutes. We review what is working, where attention is leaking, and what to do first. No pitch.</p></article>
-          <article class="card"><small>More</small><h3>See the full offer</h3><p>The detailed breakdown lives on the services page.</p><p style="margin-top:14px;"><a class="btn btn-line" href="services.html">Open services</a></p></article>
+        <div class="cards" style="margin-top:18px;">
+          <article class="card reveal"><small>Books</small><h3>Book promotion</h3><p>Trailers, launch campaigns, ads and long-term author branding.</p></article>
+          <article class="card reveal reveal-delay-1"><small>Start</small><h3>Free scorecard</h3><p>Fifteen minutes. We review what is working, where attention is leaking, and what to do first.</p></article>
+          <article class="card reveal reveal-delay-2"><small>More</small><h3>Full offer</h3><p>Detailed breakdown of every practice.</p><p style="margin-top:16px;"><a class="btn btn-line" href="services.html">Open services</a></p></article>
         </div>
       </div>
     </section>
-
-    <section class="section" style="background:#0d0b07;">
+    <section class="section" style="background:#0a0806;">
       <div class="wrap">
-        <p class="kicker">Selected work</p>
-        <h2>Projects in motion</h2>
+        <p class="kicker reveal">Selected work</p>
+        <h2 class="reveal">Projects in motion</h2>
         <div class="work">
-          <article>
-            <img class="thumb-img" src="hard-guys-cry.jpg" alt="Hard Guys Cry book">
-            <div class="copy-block"><span class="tag">Live</span><h3>Michael Vecchione</h3><p>Book campaign with landing page, trailer and social distribution.</p></div>
+          <article class="reveal">
+            <img class="thumb-img" src="hard-guys-cry.jpg" alt="Hard Guys Cry book campaign" />
+            <div class="copy"><span class="tag">Live</span><h3>Michael Vecchione</h3><p>Book campaign with landing page, trailer and social distribution for a true-crime launch.</p></div>
           </article>
-          <article>
-            <img class="thumb-img" src="nexus-hub.jpg" alt="Nexus Author Hub">
-            <div class="copy-block"><span class="tag">Live</span><h3>Author collective</h3><p>Launch pages, capture and multi-author promotion.</p></div>
+          <article class="reveal reveal-delay-1">
+            <img class="thumb-img" src="nexus-hub.jpg" alt="Author platform" />
+            <div class="copy"><span class="tag">In progress</span><h3>Author collective</h3><p>Launch pages, capture systems and multi-author promotion infrastructure.</p></div>
           </article>
         </div>
-        <p style="margin-top:24px;"><a class="btn btn-line" href="projects.html">View all work</a></p>
+        <p style="margin-top:28px;" class="reveal"><a class="btn btn-line" href="projects.html">View all work</a></p>
       </div>
     </section>
-
     <section class="section">
       <div class="wrap">
-        <p class="kicker">Proof</p>
-        <h2>Do not take my word for it</h2>
+        <p class="kicker reveal">Proof</p>
+        <h2 class="reveal">Do not take my word for it</h2>
         <div class="quotes">
-          <blockquote class="quote"><p>Dedicated, skilled, trustworthy and remarkable. I highly recommend him.</p><cite>Michael Vecchione</cite></blockquote>
-          <blockquote class="quote"><p>An easy partner. The trailer is professional and ready across every platform.</p><cite>B.G. Howard</cite></blockquote>
+          <blockquote class="quote reveal"><p>Dedicated, skilled, trustworthy and remarkable. I highly recommend him.</p><cite>Michael Vecchione</cite></blockquote>
+          <blockquote class="quote reveal reveal-delay-1"><p>An easy partner. The trailer is professional and ready across every platform.</p><cite>B.G. Howard</cite></blockquote>
         </div>
-        <p class="kicker" style="margin-top:48px;">Clients</p>
-        <h2>People I have worked with</h2>
-        <p class="lede">Michael Vecchione, Jimmy Dennedy, Benjamin Moe, Teresa Michael, B.G. Howard, Aryn Alyssabeth, Meagan Poetschlag, R.L. Corbit, Jessica King and Victoria Reiby.</p>
+        <p class="kicker reveal" style="margin-top:52px;">Clients</p>
+        <h2 class="reveal">People I have worked with</h2>
+        <p class="lede reveal">Michael Vecchione, Jimmy Dennedy, Benjamin Moe, Teresa Michael, B.G. Howard, Aryn Alyssabeth, Meagan Poetschlag, R.L. Corbit, Jessica King and Victoria Reiby.</p>
       </div>
     </section>
-
-    <section class="section" style="background:#0d0b07;">
+    <section class="section" style="background:#0a0806;">
       <div class="wrap">
-        <p class="kicker">Studio</p>
-        <h2>The team behind the work</h2>
+        <p class="kicker reveal">Studio</p>
+        <h2 class="reveal">The team behind the work</h2>
         <div class="team">
-          <article class="person"><img src="philip-oladele.jpg" alt="Philip Oladele" /><h3>Philip Oladele</h3><p>Social media marketing strategist</p></article>
-          <article class="person"><img src="esthanova.jpg" alt="Esthanova" style="object-position:center 12%;" /><h3>Esthanova</h3><p>UI/UX, customer service and content</p></article>
-          <article class="person"><img src="daniel-oladele.jpg" alt="Daniel Oladele" /><h3>Daniel Oladele</h3><p>Graphics and video</p></article>
+          <article class="person reveal"><img src="philip-oladele.jpg" alt="Philip Oladele" /><h3>Philip Oladele</h3><p>Social media marketing strategist</p></article>
+          <article class="person reveal reveal-delay-1"><img src="esthanova.jpg" alt="Esthanova" style="object-position:center 12%;" /><h3>Esthanova</h3><p>UI/UX, customer service and content</p></article>
+          <article class="person reveal reveal-delay-2"><img src="daniel-oladele.jpg" alt="Daniel Oladele" /><h3>Daniel Oladele</h3><p>Graphics and video</p></article>
         </div>
       </div>
     </section>
-
     <section class="section">
       <div class="wrap" style="text-align:center;">
-        <p class="kicker">Start here</p>
-        <h2>A free scorecard. Fifteen minutes.</h2>
-        <p class="lede" style="margin:0 auto 24px;">We map what is working, where attention is leaking, and what to do first. Trust should be earned, not requested.</p>
-        <a class="btn btn-gold" href="contact.html">Begin</a>
+        <p class="kicker reveal">Start here</p>
+        <h2 class="reveal">A free scorecard. Fifteen minutes.</h2>
+        <p class="lede reveal" style="margin:0 auto 28px;">We map what is working, where attention is leaking, and what to do first. Trust should be earned, not requested.</p>
+        <a class="btn btn-gold reveal" href="contact.html">Begin</a>
       </div>
     </section>
   </main>
-
   <footer>
     <div class="foot wrap">
       <div>Philip Oladele</div>
@@ -187,6 +217,6 @@
       </div>
     </div>
   </footer>
-  <script src="script.js?v=17"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>
