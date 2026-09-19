@@ -1,27 +1,33 @@
 /* ============================================
    PHILIP OLADELE — Scripts
-   Preloader (60 seconds) + Animations
+   Fast Preloader (5.5 seconds) + Animations
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ========== PRELOADER (exactly 60 seconds) ==========
+  // ========== PRELOADER (5.5 seconds) ==========
   const preloader = document.getElementById('preloader');
   const bar = document.getElementById('preloader-bar');
   const status = document.getElementById('preloader-status');
   const body = document.body;
+
+  if (!preloader || !bar || !status) {
+    // If elements are missing, just hide everything and continue
+    if (preloader) preloader.style.display = 'none';
+    body.classList.remove('loading');
+    return;
+  }
 
   const messages = [
     'INITIALIZING SYSTEM...',
     'LOADING STRATEGY MODULES...',
     'CALIBRATING GROWTH ENGINE...',
     'SYNCING CLIENT RESULTS...',
-    'OPTIMIZING CONTENT PIPELINES...',
     'PREPARING YOUR EXPERIENCE...',
-    'ALMOST READY...'
+    'SYSTEM READY'
   ];
 
-  const totalDuration = 60000; // 60 seconds
-  const updateInterval = 200; // update every 200ms
+  const totalDuration = 5500; // 5.5 seconds
+  const updateInterval = 50;
   const steps = totalDuration / updateInterval;
   let currentStep = 0;
   let msgIndex = 0;
@@ -31,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress = Math.min((currentStep / steps) * 100, 100);
     bar.style.width = progress + '%';
 
-    // Change message roughly every ~8.5 seconds
-    const newMsgIndex = Math.min(Math.floor(progress / 14.3), messages.length - 1);
+    // Change message every ~15%
+    const newMsgIndex = Math.min(Math.floor(progress / 16.5), messages.length - 1);
     if (newMsgIndex !== msgIndex) {
       msgIndex = newMsgIndex;
       status.textContent = messages[msgIndex];
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         preloader.classList.add('hidden');
         body.classList.remove('loading');
         animateCounters();
-      }, 800);
+      }, 400);
     }
   }, updateInterval);
 
@@ -68,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
+    if (header) header.classList.toggle('scrolled', window.scrollY > 40);
   });
 
   // Smooth scroll
