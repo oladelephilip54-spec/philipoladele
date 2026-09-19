@@ -1,70 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // PRELOADER (7 seconds)
-  const preloader = document.getElementById('preloader');
-  const bar = document.getElementById('preloader-bar');
-  const status = document.getElementById('preloader-status');
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
+  const fill = document.getElementById("preloader-bar");
+  const status = document.getElementById("preloader-status");
   const body = document.body;
 
-  if (preloader && bar && status) {
-    const messages = [
-      'Initializing',
-      'Loading systems',
-      'Preparing experience',
-      'Almost ready',
-      'Welcome'
-    ];
-
-    const totalDuration = 7000;
-    const updateInterval = 50;
-    const steps = totalDuration / updateInterval;
-    let currentStep = 0;
-    let msgIndex = 0;
-
-    const interval = setInterval(() => {
-      currentStep++;
-      const progress = Math.min((currentStep / steps) * 100, 100);
-      bar.style.width = progress + '%';
-
-      const newMsgIndex = Math.min(Math.floor(progress / 20), messages.length - 1);
-      if (newMsgIndex !== msgIndex) {
-        msgIndex = newMsgIndex;
-        status.textContent = messages[msgIndex];
+  if (preloader && fill && status) {
+    const lines = ["Opening the studio", "Presenting the three practices", "Preparing the brief", "Welcome"];
+    const duration = 7200;
+    const tick = 40;
+    const steps = duration / tick;
+    let step = 0;
+    let idx = 0;
+    const timer = setInterval(() => {
+      step += 1;
+      const p = Math.min((step / steps) * 100, 100);
+      fill.style.width = p + "%";
+      const next = Math.min(Math.floor(p / 25), lines.length - 1);
+      if (next !== idx) {
+        idx = next;
+        status.textContent = lines[idx];
       }
-
-      if (progress >= 100) {
-        clearInterval(interval);
-        status.textContent = 'Welcome';
+      if (p >= 100) {
+        clearInterval(timer);
+        status.textContent = "Welcome";
         setTimeout(() => {
-          preloader.classList.add('hidden');
-          body.classList.remove('loading');
-        }, 600);
+          preloader.classList.add("hidden");
+          body.classList.remove("loading");
+        }, 700);
       }
-    }, updateInterval);
+    }, tick);
   } else {
-    body.classList.remove('loading');
+    body.classList.remove("loading");
   }
 
-  // NAV
-  const navToggle = document.getElementById('nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const header = document.getElementById('header');
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      navToggle.classList.toggle('active');
-    });
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-      });
-    });
-  }
-
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 30);
-    });
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => menu.classList.toggle("active"));
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => menu.classList.remove("active")));
   }
 });
