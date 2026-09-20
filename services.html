@@ -7,11 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=20" />
 </head>
 <body>
-  <div class="bg-anim"></div>
-  <header class="header">
+  <div class="bg-layer"></div>
+  <header class="header" id="site-header">
     <nav class="nav wrap">
       <a class="logo" href="index.html">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
@@ -26,11 +26,11 @@
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker">Services</p>
-      <h2>Four practices. One growth system.</h2>
-      <p class="lede">Each service is built to move people from attention to action. Nothing is posted, designed or ranked without a job to do.</p>
+      <p class="kicker reveal">Services</p>
+      <h2 class="reveal">Four practices. One growth system.</h2>
+      <p class="lede reveal">Each service is built to move people from attention to action. Nothing is posted, designed or ranked without a job to do.</p>
       <div class="cards" style="grid-template-columns:repeat(2,1fr)">
-        <article class="card">
+        <article class="card reveal">
           <small>01 / Social</small>
           <h3>Social media management</h3>
           <p>A coordinated presence across the platforms that matter to your buyer.</p>
@@ -42,7 +42,7 @@
             <li>Monthly performance reporting</li>
           </ul>
         </article>
-        <article class="card">
+        <article class="card reveal reveal-delay-1">
           <small>02 / Web</small>
           <h3>Website design</h3>
           <p>Sites that look considered and ask for the next step without noise.</p>
@@ -54,7 +54,7 @@
             <li>SEO-ready structure</li>
           </ul>
         </article>
-        <article class="card">
+        <article class="card reveal">
           <small>03 / Search</small>
           <h3>SEO</h3>
           <p>Technical and content work so the right people can find you.</p>
@@ -66,7 +66,7 @@
             <li>Monthly reporting</li>
           </ul>
         </article>
-        <article class="card">
+        <article class="card reveal reveal-delay-1">
           <small>04 / Books</small>
           <h3>Book promotion</h3>
           <p>Campaigns built for authors, not generic brands.</p>
@@ -79,7 +79,7 @@
           </ul>
         </article>
       </div>
-      <p style="margin-top:40px;"><a class="btn btn-gold" href="contact.html">Begin a conversation</a></p>
+      <p style="margin-top:48px;" class="reveal"><a class="btn btn-gold" href="contact.html">Begin a conversation</a></p>
     </div>
   </main>
   <footer>
@@ -88,6 +88,6 @@
       <div><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Work</a><a href="contact.html">Begin</a></div>
     </div>
   </footer>
-  <script src="script.js?v=13"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>
