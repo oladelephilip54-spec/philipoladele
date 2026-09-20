@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (preloader && bar && status) {
     var lines = [
-      "Preparing the studio",
-      "Loading systems",
-      "Social · Web · Books",
-      "Almost ready"
+      "Digital Growth Strategist",
+      "Web & UI/UX Designer",
+      "Author & Book Marketing Strategist",
+      "Digital Growth Strategist"
     ];
     var duration = 3200;
     var start = performance.now();
