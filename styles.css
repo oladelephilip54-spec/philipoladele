@@ -251,7 +251,45 @@ textarea { min-height: 140px; }
 .way { display: block; margin-top: 16px; color: var(--mute); }
 .way:hover { color: var(--gold2); }
 
-footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--mute); }
+footer { b.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.metric {
+  background: linear-gradient(180deg, rgba(12, 28, 32, 0.9), rgba(8, 16, 14, 0.92));
+  border: 1px solid rgba(72, 196, 168, 0.22);
+  padding: 22px 18px;
+}
+.metric:hover {
+  transform: translateY(-4px);
+  border-color: rgba(72, 196, 168, 0.5);
+}
+.metric b, .metric .count {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.15rem;
+  color: #7ee0c8;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.metric span {
+  display: block;
+  color: #c9d6d2;
+  font-size: 13px;
+  margin-top: 8px;
+}
+.metric em {
+  display: block;
+  color: #5ec8ff;
+  font-style: normal;
+  font-size: 12px;
+  margin-top: 6px;
+}
+@media (max-width: 900px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+}order-top: 1px solid var(--line); padding: 28px 0; color: var(--mute); }
 .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
 .foot a { margin-left: 16px; color: var(--mute); font-size: 13px; }
 .foot a:hover { color: var(--gold2); }
