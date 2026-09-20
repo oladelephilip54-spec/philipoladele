@@ -97,7 +97,7 @@ function formatCount(n, decimals) {
     var target = parseFloat(el.getAttribute("data-target") || "0");
     var suffix = el.getAttribute("data-suffix") || "";
     var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
-    var duration = 1400;
+    var duration = 15000;
     var start = performance.now();
     function tick(now) {
       var t0 = Math.min((now - start) / duration, 1);
