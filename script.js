@@ -2,17 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var preloader = document.getElementById("preloader");
   var bar = document.getElementById("preloader-bar");
   var status = document.getElementById("preloader-status");
-  var pctEl = document.getElementById("loader-pct");
-  var circle = document.getElementById("loader-circle");
   var body = document.body;
-  var circumference = 2 * Math.PI * 40;
 
-  if (preloader && bar && status) {
+  if (preloader) {
     var lines = [
       "Digital Growth Strategist",
       "Web & UI/UX Designer",
-      "Author & Book Marketing Strategist",
-      "Digital Growth Strategist"
+      "Author & Book Marketing Strategist"
     ];
     var duration = 3200;
     var start = performance.now();
@@ -20,18 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function frame(now) {
       var t = Math.min((now - start) / duration, 1);
       var ease = 1 - Math.pow(1 - t, 3);
-      var p = Math.round(ease * 100);
-      bar.style.width = p + "%";
-      if (pctEl) pctEl.textContent = String(p);
-      if (circle) {
-        circle.style.strokeDashoffset = String(circumference * (1 - ease));
+      if (bar) bar.style.width = (ease * 100) + "%";
+      if (status) {
+        var idx = Math.min(Math.floor(t * lines.length), lines.length - 1);
+        status.textContent = lines[idx];
       }
-      var idx = Math.min(Math.floor(t * lines.length), lines.length - 1);
-      status.textContent = lines[idx];
       if (t < 1) {
         requestAnimationFrame(frame);
       } else {
-        status.textContent = "Business & Book Marketing Strategist";
+        if (status) status.textContent = "Author & Book Marketing Strategist";
         setTimeout(function () {
           preloader.classList.add("hidden");
           body.classList.remove("loading");
@@ -39,11 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     requestAnimationFrame(frame);
-  } else if (preloader) {
-    setTimeout(function () {
-      preloader.classList.add("hidden");
-      body.classList.remove("loading");
-    }, 800);
   }
 
   var toggle = document.getElementById("nav-toggle");
@@ -84,10 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
       el.classList.add("visible");
     });
   }
-});
-function formatCount(n, decimals) {
+
+  function formatCount(n, decimals) {
     if (decimals) return n.toFixed(decimals);
-    if (n >= 1000) return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return String(Math.round(n));
   }
 
@@ -109,18 +96,15 @@ function formatCount(n, decimals) {
   }
 
   var counters = document.querySelectorAll(".count");
-  if (counters.length) {
-    if ("IntersectionObserver" in window) {
-      var cio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            countUp(e.target);
-            cio.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.4 });
-      counters.forEach(function (el) { cio.observe(el); });
-    } else {
-      counters.forEach(countUp);
-    }
+  if (counters.length && "IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          countUp(e.target);
+          cio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { cio.observe(el); });
   }
+});
