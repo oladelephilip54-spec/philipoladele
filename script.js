@@ -85,3 +85,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+function formatCount(n, decimals) {
+    if (decimals) return n.toFixed(decimals);
+    if (n >= 1000) return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return String(Math.round(n));
+  }
+
+  function countUp(el) {
+    if (el.getAttribute("data-done") === "1") return;
+    el.setAttribute("data-done", "1");
+    var target = parseFloat(el.getAttribute("data-target") || "0");
+    var suffix = el.getAttribute("data-suffix") || "";
+    var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    var duration = 1400;
+    var start = performance.now();
+    function tick(now) {
+      var t0 = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - t0, 3);
+      el.textContent = formatCount(target * eased, decimals) + suffix;
+      if (t0 < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var counters = document.querySelectorAll(".count");
+  if (counters.length) {
+    if ("IntersectionObserver" in window) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            countUp(e.target);
+            cio.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { cio.observe(el); });
+    } else {
+      counters.forEach(countUp);
+    }
+  }
