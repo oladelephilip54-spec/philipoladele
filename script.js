@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (t < 1) {
         requestAnimationFrame(frame);
       } else {
-        status.textContent = "Welcome";
+        status.textContent = "Business & Book Marketing Strategist";
         setTimeout(function () {
           preloader.classList.add("hidden");
           body.classList.remove("loading");
