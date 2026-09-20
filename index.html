@@ -3,80 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philip Oladele — Social Media Strategist & Growth Partner</title>
+  <title>Philip Oladele — Social Media Strategist, Manager and Growth Partner</title>
   <meta name="description" content="Philip Oladele builds social media systems, websites, SEO and book campaigns that turn attention into clients. Strategy for brands and authors." />
   <meta name="theme-color" content="#050403" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="stylesheet" href="styles.css?v=22" />
   <style>
-    #preloader {
-      position: fixed; inset: 0; z-index: 9999;
-      display: flex; align-items: center; justify-content: center;
-      background: #050403; color: #f0d9a0;
-      font-family: Outfit, system-ui, sans-serif;
-      transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), visibility 0.9s;
+    #preloader{
+      position:fixed;inset:0;z-index:9999;overflow:hidden;
+      background:#050403;color:#f0d9a0;
+      font-family:Outfit,system-ui,sans-serif;
+      transition:opacity .8s cubic-bezier(.22,1,.36,1),visibility .8s;
     }
-    #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    .loader-inner { text-align: center; position: relative; width: min(320px, 86vw); }
-    .loader-ring { width: 88px; height: 88px; margin: 0 auto 28px; position: relative; }
-    .loader-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-    .loader-ring circle { fill: none; stroke-width: 2; }
-    .loader-ring .track { stroke: rgba(212,175,106,0.15); }
-    .loader-ring .progress {
-      stroke: #f0d9a0; stroke-linecap: round;
-      stroke-dasharray: 251.2; stroke-dashoffset: 251.2;
-      transition: stroke-dashoffset 0.15s linear;
-      filter: drop-shadow(0 0 8px rgba(240,217,160,0.5));
+    #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .load-stage{position:absolute;inset:0}
+    .load-stage img{
+      width:100%;height:100%;object-fit:cover;object-position:center 18%;
+      filter:grayscale(.2) contrast(1.08) brightness(.72);
+      transform:scale(1.08);
+      animation:loadZoom 3.2s cubic-bezier(.16,1,.3,1) forwards;
     }
-    .loader-pct {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.35rem; color: #f5efe3; font-weight: 500;
+    .load-veil{
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(5,4,3,.25) 0%,rgba(5,4,3,.55) 45%,rgba(5,4,3,.92) 100%);
     }
-    .loader-name {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 500;
-      color: #f5efe3; margin-bottom: 10px;
-      opacity: 0; animation: loadFade 0.7s 0.2s forwards;
+    .load-wipe{
+      position:absolute;left:0;right:0;top:0;height:2px;
+      background:linear-gradient(90deg,transparent,#f0d9a0,transparent);
+      transform:scaleX(0);transform-origin:left;
+      animation:wipe 1.1s .15s cubic-bezier(.22,1,.36,1) forwards;
+      box-shadow:0 0 18px rgba(240,217,160,.45);
     }
-    .loader-line {
-      font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
-      color: #d4af6a; min-height: 1.4em;
+    .load-copy{
+      position:absolute;left:0;right:0;bottom:12%;text-align:center;padding:0 24px;
     }
-    .loader-bar {
-      height: 1px; width: 100%; margin-top: 22px;
-      background: rgba(212,175,106,0.15); overflow: hidden;
+    .load-copy small{
+      display:block;letter-spacing:.34em;text-transform:uppercase;font-size:11px;color:#d4af6a;
+      opacity:0;animation:rise .6s .35s forwards;
     }
-    .loader-bar i {
-      display: block; height: 100%; width: 0;
-      background: linear-gradient(90deg, #a67c3d, #f0d9a0);
-      box-shadow: 0 0 12px rgba(240,217,160,0.4);
+    .load-copy b{
+      display:block;font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:clamp(2.2rem,7vw,4.2rem);font-weight:500;color:#f5efe3;margin:8px 0 10px;
+      opacity:0;animation:rise .7s .45s forwards;
     }
-    @keyframes loadFade {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: none; }
+    .load-copy span{
+      display:block;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:#f0d9a0;
+      min-height:1.3em;opacity:0;animation:rise .6s .6s forwards;
     }
+    .load-bar{width:min(220px,60vw);height:1px;margin:22px auto 0;background:rgba(212,175,106,.2);overflow:hidden}
+    .load-bar i{display:block;height:100%;width:0;background:#f0d9a0}
+    #loader-pct,#loader-circle{display:none}
+    @keyframes loadZoom{to{transform:scale(1)}}
+    @keyframes wipe{to{transform:scaleX(1)}}
+    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   </style>
 </head>
 <body class="loading">
   <div class="bg-layer"></div>
+
   <div id="preloader" aria-hidden="true">
-    <div class="loader-inner">
-      <div class="loader-ring">
-        <svg viewBox="0 0 88 88">
-          <circle class="track" cx="44" cy="44" r="40"></circle>
-          <circle class="progress" id="loader-circle" cx="44" cy="44" r="40"></circle>
-        </svg>
-        <div class="loader-pct" id="loader-pct">0</div>
-      </div>
-      <div class="loader-name">Philip Oladele</div>
-      <div class="loader-line" id="preloader-status">Preparing the studio</div>
-      <div class="loader-bar"><i id="preloader-bar"></i></div>
+    <div class="load-stage">
+      <img src="philip-oladele.jpg" alt="">
+      <div class="load-veil"></div>
+      <div class="load-wipe"></div>
     </div>
+    <div class="load-copy">
+      <small>Studio</small>
+      <b>Philip Oladele</b>
+      <span id="preloader-status">Social Media Strategist and Manager</span>
+      <div class="load-bar"><i id="preloader-bar"></i></div>
+    </div>
+    <span id="loader-pct"></span>
+    <span id="loader-circle"></span>
   </div>
+
   <header class="header" id="site-header">
     <nav class="nav wrap">
       <a class="logo" href="index.html">Philip Oladele</a>
@@ -85,15 +87,17 @@
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
         <li><a class="nav-link" href="projects.html">Work</a></li>
+        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
         <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
+
   <main>
     <section class="hero wrap">
       <div class="reveal">
-        <p class="kicker">Social Media Strategist and Growth Partner</p>
+        <p class="kicker">Social Media Strategist, Manager and Growth Partner</p>
         <h1>Turn attention into <span>trust and clients</span></h1>
         <p>I build the system behind the posts: strategy, content, websites, search and book campaigns for brands and authors who refuse to look average online.</p>
         <div class="actions">
@@ -110,24 +114,25 @@
         <img src="philip-oladele.jpg" alt="Philip Oladele" />
       </div>
     </section>
+
     <div class="band" aria-hidden="true">
       <div class="band-track">
-        <span>Social Media</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
-        <span>Brand Systems</span><span>Growth Strategy</span>
-        <span>Social Media</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
-        <span>Brand Systems</span><span>Growth Strategy</span>
+        <span>Social Media Strategy</span><span>Social Media Management</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
+        <span>Social Media Strategy</span><span>Social Media Management</span><span>Website Design</span><span>SEO</span><span>Book Promotion</span>
       </div>
     </div>
+
     <section class="section">
       <div class="wrap">
         <p class="kicker reveal">The calling</p>
         <h2 class="reveal">This is not a posting service</h2>
         <div class="split">
-          <p class="lede reveal">I am Philip Oladele, a certified professional social media strategist. I make things happen, and I am good at what I do. I am here to understand the brand, see where it can go, and make that vision real.</p>
+          <p class="lede reveal">I am Philip Oladele, a certified professional social media strategist and manager. I make things happen, and I am good at what I do. I am here to understand the brand, see where it can go, and make that vision real.</p>
           <p class="lede reveal reveal-delay-1">Good businesses often look invisible online. Inconsistent content and unclear messaging make a strong brand look weaker than it is. The work is to make you easier to discover, understand, trust and contact.</p>
         </div>
       </div>
     </section>
+
     <section class="section" style="background:#0a0806;">
       <div class="wrap">
         <p class="kicker reveal">The system</p>
@@ -139,6 +144,7 @@
         </div>
       </div>
     </section>
+
     <section class="section">
       <div class="wrap">
         <p class="kicker reveal">Practices</p>
@@ -155,6 +161,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" style="background:#0a0806;">
       <div class="wrap">
         <p class="kicker reveal">Selected work</p>
@@ -172,6 +179,7 @@
         <p style="margin-top:28px;" class="reveal"><a class="btn btn-line" href="projects.html">View all work</a></p>
       </div>
     </section>
+
     <section class="section">
       <div class="wrap">
         <p class="kicker reveal">Proof</p>
@@ -180,22 +188,57 @@
           <blockquote class="quote reveal"><p>Dedicated, skilled, trustworthy and remarkable. I highly recommend him.</p><cite>Michael Vecchione</cite></blockquote>
           <blockquote class="quote reveal reveal-delay-1"><p>An easy partner. The trailer is professional and ready across every platform.</p><cite>B.G. Howard</cite></blockquote>
         </div>
+        <p class="reveal" style="margin:22px 0 0;"><a class="btn btn-line" href="reviews.html">Read all reviews</a></p>
         <p class="kicker reveal" style="margin-top:52px;">Clients</p>
         <h2 class="reveal">People I have worked with</h2>
         <p class="lede reveal">Michael Vecchione, Jimmy Dennedy, Benjamin Moe, Teresa Michael, B.G. Howard, Aryn Alyssabeth, Meagan Poetschlag, R.L. Corbit, Jessica King and Victoria Reiby.</p>
       </div>
     </section>
+
+    <section class="section" style="background:#0a0806;">
+      <div class="wrap">
+        <p class="kicker reveal">Proof in numbers</p>
+        <h2 class="reveal">Analytics from live work</h2>
+        <p class="lede reveal">Figures taken from campaign dashboards in the written portfolio. Not estimates.</p>
+        <div class="metrics">
+          <div class="metric reveal"><b>109K+</b><span>Facebook video views</span><em>+74% in window</em></div>
+          <div class="metric reveal reveal-delay-1"><b>12.7K</b><span>Post impressions in 7 days</span><em>+70% vs prior 7 days</em></div>
+          <div class="metric reveal reveal-delay-2"><b>8.4K</b><span>Profile viewers in 90 days</span><em>+100% vs prior 7 days</em></div>
+          <div class="metric reveal"><b>749</b><span>Followers in tracked window</span><em>+23% vs prior 7 days</em></div>
+        </div>
+        <div class="metrics" style="margin-top:16px;">
+          <div class="metric reveal"><b>3.7K</b><span>3-second video views</span><em>+62%</em></div>
+          <div class="metric reveal reveal-delay-1"><b>178</b><span>1-minute views</span><em>+24%</em></div>
+          <div class="metric reveal reveal-delay-2"><b>440</b><span>7-day impressions, second account</span><em>+20%</em></div>
+          <div class="metric reveal"><b>65</b><span>90-day profile viewers, second account</span><em>+100%</em></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" style="background:#0a0806;">
       <div class="wrap">
         <p class="kicker reveal">Studio</p>
         <h2 class="reveal">The team behind the work</h2>
         <div class="team">
-          <article class="person reveal"><img src="philip-oladele.jpg" alt="Philip Oladele" /><h3>Philip Oladele</h3><p>Social media marketing strategist</p></article>
-          <article class="person reveal reveal-delay-1"><img src="esthanova.jpg" alt="Esthanova" style="object-position:center 12%;" /><h3>Esthanova</h3><p>UI/UX, customer service and content</p></article>
-          <article class="person reveal reveal-delay-2"><img src="daniel-oladele.jpg" alt="Daniel Oladele" /><h3>Daniel Oladele</h3><p>Graphics and video</p></article>
+          <article class="person reveal">
+            <img src="philip-oladele.jpg" alt="Philip Oladele" />
+            <h3>Philip Oladele</h3>
+            <p>Social media strategist and manager</p>
+          </article>
+          <article class="person reveal reveal-delay-1">
+            <img src="esthanova.jpg" alt="Esthanova" style="object-position:center 12%;" />
+            <h3>Esthanova</h3>
+            <p>UI/UX, customer service and content</p>
+          </article>
+          <article class="person reveal reveal-delay-2">
+            <img src="daniel-oladele.jpg" alt="Daniel Oladele" />
+            <h3>Daniel Oladele</h3>
+            <p>Graphics and video</p>
+          </article>
         </div>
       </div>
     </section>
+
     <section class="section">
       <div class="wrap" style="text-align:center;">
         <p class="kicker reveal">Start here</p>
@@ -205,6 +248,7 @@
       </div>
     </section>
   </main>
+
   <footer>
     <div class="foot wrap">
       <div>Philip Oladele</div>
@@ -212,11 +256,12 @@
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="projects.html">Work</a>
+        <a href="reviews.html">Reviews</a>
         <a href="contact.html">Contact</a>
         <a href="https://www.facebook.com/share/16Bh3M7yet5/" target="_blank" rel="noopener">Facebook</a>
       </div>
     </div>
   </footer>
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=22"></script>
 </body>
 </html>
