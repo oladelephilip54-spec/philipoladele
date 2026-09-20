@@ -58,6 +58,41 @@
     @keyframes loadZoom{to{transform:scale(1)}}
     @keyframes wipe{to{transform:scaleX(1)}}
     @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .metric {
+      background: linear-gradient(180deg, #0c1c20, #08100e);
+      border: 1px solid rgba(72, 196, 168, 0.28);
+      padding: 22px 18px;
+    }
+    .metric b, .metric .count {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.15rem;
+      color: #7ee0c8 !important;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .metric span {
+      display: block;
+      color: #c9d6d2;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .metric em {
+      display: block;
+      color: #5ec8ff !important;
+      font-style: normal;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    @media (max-width: 900px) {
+      .metrics { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body class="loading">
