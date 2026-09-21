@@ -6,20 +6,34 @@
   <title>Client Reviews | Philip Oladele</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=29" />
+  <link rel="stylesheet" href="styles.css?v=33" />
   <style>
-    .page { padding-top:120px; padding-bottom:100px; }
-    .page h2 { font-size:clamp(2.4rem,6vw,4.6rem); line-height:.95; max-width:16ch; }
-    .t-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:40px; }
-    .t-card { background:rgba(12,10,8,.72); border:1px solid rgba(240,217,160,.16); border-radius:18px; padding:28px 26px 24px; }
-    .t-card p { font-size:1.08rem; line-height:1.55; color:#f3ead8; margin:0 0 22px; }
+    .page { padding-top:110px; padding-bottom:90px; }
+    .page h2 { font-size:clamp(2.3rem,6vw,4.4rem); line-height:.95; max-width:16ch; }
+    .lede { color:#cfc6b6; max-width:46ch; }
+    .rail { overflow:hidden; margin:36px -4vw 48px; mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+    .rail-track { display:flex; gap:16px; width:max-content; animation:drift 42s linear infinite; }
+    .rail-track:hover { animation-play-state:paused; }
+    @keyframes drift { to { transform:translateX(-50%); } }
+    .chip { flex:none; max-width:320px; background:rgba(12,10,8,.8); border:1px solid rgba(240,217,160,.16); border-radius:16px; padding:18px; color:#f3ead8; }
+    .chip small { display:block; margin-top:10px; color:#d4af6a; letter-spacing:.12em; text-transform:uppercase; font-size:10px; }
+    .t-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .t-card { background:rgba(12,10,8,.72); border:1px solid rgba(240,217,160,.16); border-radius:18px; padding:26px 24px 22px; opacity:0; transform:translateY(18px); animation:up .7s cubic-bezier(.22,1,.36,1) forwards; }
+    .t-card:nth-child(1){animation-delay:.05s} .t-card:nth-child(2){animation-delay:.15s}
+    .t-card:nth-child(3){animation-delay:.25s} .t-card:nth-child(4){animation-delay:.35s}
+    .t-card:nth-child(5){animation-delay:.45s} .t-card:nth-child(6){animation-delay:.55s}
+    .t-card:nth-child(7){animation-delay:.65s} .t-card:nth-child(8){animation-delay:.75s}
+    .t-card:nth-child(9){animation-delay:.85s} .t-card:nth-child(10){animation-delay:.95s}
+    @keyframes up { to { opacity:1; transform:none; } }
+    .t-card p { margin:0 0 18px; color:#f3ead8; line-height:1.55; }
     .t-card p strong { color:#f0d9a0; }
     .who { display:flex; align-items:center; gap:12px; }
-    .av { width:44px; height:44px; border-radius:50%; background:#f0d9a0; color:#1a140c; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; }
+    .av { width:42px; height:42px; border-radius:50%; background:#f0d9a0; color:#1a140c; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; }
     .who h3 { margin:0; font-size:1rem; font-family:Outfit,sans-serif; }
     .who small { color:#b7aa94; }
+    .wide { grid-column:1 / -1; }
     .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
-    @media(max-width:800px){ .t-grid{grid-template-columns:1fr;} }
+    @media(max-width:800px){ .t-grid{grid-template-columns:1fr;} .wide{grid-column:auto;} }
   </style>
 </head>
 <body>
@@ -44,20 +58,41 @@
   <main class="section page">
     <div class="wrap">
       <p class="kicker">Reviews</p>
-      <h2>Do not take my word for it.</h2>
+      <h2>Don't take Philip's word for it.</h2>
+      <p class="lede">Full notes from the written portfolio. Some names stay private because the client asked.</p>
+    </div>
+    <div class="rail">
+      <div class="rail-track">
+        <div class="chip">I saw the post on Facebook, it's terrific.<small>Confidential client</small></div>
+        <div class="chip">Great night. The bookstore sold a lot of books.<small>Michael Vecchione</small></div>
+        <div class="chip">The trailer is terrific. Please post it today.<small>Client note</small></div>
+        <div class="chip">I have no problem paying for quality work.<small>Confidential client</small></div>
+        <div class="chip">I'll give your number to my wife.<small>Client note</small></div>
+        <div class="chip">Dedicated, skilled, trustworthy.<small>Michael Vecchione</small></div>
+        <div class="chip">I saw the post on Facebook, it's terrific.<small>Confidential client</small></div>
+        <div class="chip">Great night. The bookstore sold a lot of books.<small>Michael Vecchione</small></div>
+        <div class="chip">The trailer is terrific. Please post it today.<small>Client note</small></div>
+        <div class="chip">I have no problem paying for quality work.<small>Confidential client</small></div>
+        <div class="chip">I'll give your number to my wife.<small>Client note</small></div>
+        <div class="chip">Dedicated, skilled, trustworthy.<small>Michael Vecchione</small></div>
+      </div>
+    </div>
+    <div class="wrap">
       <div class="t-grid">
-        <article class="t-card"><p><strong>Dedicated, skilled, trustworthy</strong> and he did a remarkable job. I highly recommend him.</p><div class="who"><div class="av">MV</div><div><h3>Michael Vecchione</h3><small>Author, Hard Guys Cry</small></div></div></article>
+        <article class="t-card"><p>I hired Oladele to help market my books. He was <strong>dedicated, skilled, trustworthy</strong> and did a remarkable job. I highly recommend him.</p><div class="who"><div class="av">MV</div><div><h3>Michael Vecchione</h3><small>Author, Hard Guys Cry</small></div></div></article>
         <article class="t-card"><p><strong>Great night.</strong> The bookstore sold a lot of books. Now we need to advertise.</p><div class="who"><div class="av">MV</div><div><h3>Michael Vecchione</h3><small>Event note</small></div></div></article>
-        <article class="t-card"><p>A <strong>very easy social media manager</strong>. Professional trailer across every platform.</p><div class="who"><div class="av">BH</div><div><h3>B.G. Howard</h3><small>Novelist</small></div></div></article>
-        <article class="t-card"><p>The trailer is <strong>terrific</strong>. Please post it today.</p><div class="who"><div class="av">CL</div><div><h3>Client note</h3><small>After trailer delivery</small></div></div></article>
+        <article class="t-card wide"><p>He proved a <strong>very easy social media manager</strong>. Professional trailer across all social media platforms.</p><div class="who"><div class="av">BH</div><div><h3>B.G. Howard</h3><small>Award-winning columnist and novelist</small></div></div></article>
         <article class="t-card"><p>Suggested updates made <strong>in a timely manner</strong>.</p><div class="who"><div class="av">TM</div><div><h3>Teresa Michael</h3><small>Author</small></div></div></article>
-        <article class="t-card"><p>Ads, posts and trailers for well over a year. <strong>I highly recommend him.</strong></p><div class="who"><div class="av">AU</div><div><h3>Long-term author</h3><small>Written portfolio</small></div></div></article>
-        <article class="t-card"><p>I have no problem paying for quality work, and <strong>your work is terrific</strong>.</p><div class="who"><div class="av">CL</div><div><h3>Client note</h3><small>On paid delivery</small></div></div></article>
-        <article class="t-card"><p>You are <strong>trustworthy</strong>. Let this be the beginning of a long partnership.</p><div class="who"><div class="av">BM</div><div><h3>Benjamin Moe</h3><small>Author</small></div></div></article>
+        <article class="t-card"><p>Working with him for well over a year. Ads, posts and trailers. <strong>I highly recommend him.</strong></p><div class="who"><div class="av">AU</div><div><h3>Long-term author</h3><small>Name withheld</small></div></div></article>
+        <article class="t-card"><p>I saw the post on Facebook, it's <strong>terrific</strong>.</p><div class="who"><div class="av">••</div><div><h3>Confidential client</h3><small>Facebook note</small></div></div></article>
+        <article class="t-card"><p>I have no problem paying for quality work, and <strong>your work is terrific</strong>.</p><div class="who"><div class="av">••</div><div><h3>Confidential client</h3><small>Distribution note</small></div></div></article>
+        <article class="t-card"><p>The trailer is <strong>terrific</strong>. Please post it today. I'll give your number to my wife.</p><div class="who"><div class="av">••</div><div><h3>Client note</h3><small>After trailer delivery</small></div></div></article>
+        <article class="t-card"><p>That time of season again. When I self publish this fall, I want you involved again. Also republishing my mother's book.</p><div class="who"><div class="av">••</div><div><h3>Returning author</h3><small>Name withheld</small></div></div></article>
+        <article class="t-card wide"><p>You are <strong>trustworthy</strong> and not just another person looking for a quick buck. Let this be the beginning of a long partnership. I will hire you for more of your brilliant service.</p><div class="who"><div class="av">BM</div><div><h3>Benjamin Moe</h3><small>Author</small></div></div></article>
       </div>
       <p style="margin-top:40px;"><a class="pill" href="contact.html">Begin a conversation</a></p>
     </div>
   </main>
-  <script src="script.js?v=29"></script>
+  <script src="script.js?v=33"></script>
 </body>
 </html>
