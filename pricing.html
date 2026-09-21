@@ -4,30 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pricing | Social, Web, Book Campaigns | Philip Oladele</title>
-  <meta name="description" content="Book trailers from $100. Social media management from $500 a month. UI/UX and websites from $800." />
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=26" />
+  <link rel="stylesheet" href="styles.css?v=37" />
   <style>
-    .page { padding-top: 120px; padding-bottom: 100px; }
-    .page h2 { font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: .95; max-width: 18ch; }
-    .page .lede { font-size: 1.12rem; max-width: 48ch; color: #cfc6b6; }
-    .plan-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 28px; }
-    .plan-grid.four { grid-template-columns: repeat(4,1fr); }
-    .plan { background: rgba(12,10,8,.7); border:1px solid rgba(240,217,160,.18); padding: 28px 24px 32px; border-radius: 18px; }
-    .plan small { letter-spacing:.2em; text-transform:uppercase; color:#d4af6a; font-size:11px; }
-    .plan h3 { font-size: 2.4rem; margin: 10px 0 12px; color:#f5efe3; }
-    .plan ul { margin: 16px 0 22px; padding-left: 18px; color:#cfc6b6; }
-    .plan li { margin: 8px 0; }
+    body { background:#050403; }
+    .price-bg { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+      background:radial-gradient(circle at 20% 10%, rgba(255,140,40,.18), transparent 35%), radial-gradient(circle at 80% 80%, rgba(20,180,150,.14), transparent 40%), #050403; }
+    .price-bg i { position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; animation:orb 16s ease-in-out infinite alternate; }
+    .price-bg i:nth-child(1){ width:46vw; height:46vw; left:-10%; top:-10%; background:#7a4a12; }
+    .price-bg i:nth-child(2){ width:38vw; height:38vw; right:-8%; top:20%; background:#134e4a; animation-duration:22s; }
+    .price-bg i:nth-child(3){ width:42vw; height:42vw; left:30%; bottom:-18%; background:#7c2d12; animation-duration:19s; }
+    @keyframes orb { to { transform:translate(6%,4%) scale(1.15); } }
+    .page { position:relative; z-index:1; padding-top:120px; padding-bottom:100px; }
+    .page h2 { font-size:clamp(2.4rem,6vw,4.4rem); line-height:.95; max-width:16ch; }
+    .lede { color:#cfc6b6; max-width:48ch; }
+    .plan-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
+    .plan-grid.four { grid-template-columns:repeat(4,1fr); }
+    .plan { background:rgba(8,6,4,.78); border:1px solid rgba(240,217,160,.2); padding:28px 24px 32px; border-radius:18px; }
+    .plan small { letter-spacing:.2em; text-transform:uppercase; font-size:11px; }
+    .plan h3 { font-size:2.4rem; margin:10px 0 12px; }
+    .plan ul { margin:16px 0 22px; padding-left:18px; color:#cfc6b6; }
     .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; }
-    .pill-gold { background:#f0d9a0; color:#1a140c; }
-    .pill-line { border:1px solid rgba(240,217,160,.45); color:#f0d9a0; }
-    @media (max-width: 1100px) { .plan-grid, .plan-grid.four { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 700px) { .plan-grid, .plan-grid.four { grid-template-columns: 1fr; } }
+    .book small, .book h3 { color:#ffd36a; }
+    .web small, .web h3 { color:#7ee0c8; }
+    .soc small, .soc h3 { color:#ff9a4a; }
+    .book { box-shadow:0 0 28px rgba(255,170,40,.12); animation:pulseBook 3.2s ease-in-out infinite; }
+    .web { box-shadow:0 0 28px rgba(40,180,160,.14); animation:pulseWeb 3.4s ease-in-out infinite; }
+    .soc { box-shadow:0 0 28px rgba(255,90,20,.12); animation:pulseSoc 3s ease-in-out infinite; }
+    .hot { animation-duration:2.2s; }
+    @keyframes pulseBook { 50% { box-shadow:0 0 46px rgba(255,170,40,.32); } }
+    @keyframes pulseWeb { 50% { box-shadow:0 0 46px rgba(40,180,160,.34); } }
+    @keyframes pulseSoc { 50% { box-shadow:0 0 46px rgba(255,90,20,.32); } }
+    .book .pill { background:#ffd36a; color:#1a140c; }
+    .web .pill { background:#7ee0c8; color:#05201c; }
+    .soc .pill { background:#ff9a4a; color:#1a0c06; }
+    .plan:hover { transform:translateY(-4px); }
+    @media(max-width:1100px){ .plan-grid,.plan-grid.four{grid-template-columns:1fr 1fr;} }
+    @media(max-width:700px){ .plan-grid,.plan-grid.four{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
-  <div class="bg-layer"></div>
+  <div class="price-bg"><i></i><i></i><i></i></div>
   <header class="header" id="site-header">
     <nav class="nav wrap">
       <a class="logo" href="/">Philip Oladele</a>
@@ -49,38 +67,34 @@
     <div class="wrap">
       <p class="kicker">Pricing</p>
       <h2>Three practices. Honest prices.</h2>
-      <p class="lede">Social media management, UI/UX and websites, book trailers and campaigns.</p>
-
-      <p class="kicker" style="margin-top:64px;">01 / Book promotion</p>
+      <p class="lede">Gold for books. Teal for web. Ember for social.</p>
+      <p class="kicker" style="margin-top:56px;">01 / Book promotion</p>
       <h2>Trailers from $100.</h2>
       <div class="plan-grid four">
-        <article class="plan"><small>Trailer</small><h3>$100</h3><p>One book trailer cut, ready to post.</p><ul><li>15 to 45 second cut</li><li>Title, author and hook on screen</li><li>Square and landscape exports</li><li>One revision</li></ul><a class="pill pill-gold" href="contact.html">Book a trailer</a></article>
-        <article class="plan"><small>Sprint</small><h3>$500</h3><p>Two week launch push.</p><ul><li>Scorecard call</li><li>Trailer or 8 posts</li><li>Bio or landing rewrite</li><li>WhatsApp support</li></ul><a class="pill pill-line" href="contact.html">Start sprint</a></article>
-        <article class="plan"><small>Launch month</small><h3>$1,000</h3><p>Thirty days around one book.</p><ul><li>Trailer plus 16 posts</li><li>Calendar and captions</li><li>Amazon and social links</li><li>Weekly report</li></ul><a class="pill pill-line" href="contact.html">Launch the book</a></article>
-        <article class="plan"><small>Author system</small><h3>$2,000</h3><p>Sixty days. Presence plus page.</p><ul><li>Two months of posting</li><li>Trailer and ads cuts</li><li>Simple page + SEO basics</li><li>Monthly scorecard</li></ul><a class="pill pill-line" href="contact.html">Build the author</a></article>
+        <article class="plan book"><small>Trailer</small><h3>$100</h3><p>One book trailer cut.</p><ul><li>15 to 45 seconds</li><li>Square and landscape</li><li>One revision</li></ul><a class="pill" href="contact.html">Book a trailer</a></article>
+        <article class="plan book"><small>Sprint</small><h3>$500</h3><p>Two week launch push.</p><ul><li>Scorecard</li><li>Trailer or 8 posts</li><li>Bio rewrite</li></ul><a class="pill" href="contact.html">Start sprint</a></article>
+        <article class="plan book"><small>Launch month</small><h3>$1,000</h3><p>Thirty days around one book.</p><ul><li>Trailer plus 16 posts</li><li>Calendar</li><li>Weekly report</li></ul><a class="pill" href="contact.html">Launch</a></article>
+        <article class="plan book hot"><small>Author system</small><h3>$2,000</h3><p>Sixty days. Presence plus page.</p><ul><li>Two months posting</li><li>Page + SEO basics</li><li>Monthly scorecard</li></ul><a class="pill" href="contact.html">Build the author</a></article>
       </div>
-
-      <p class="kicker" style="margin-top:72px;">02 / UI/UX and websites</p>
+      <p class="kicker" style="margin-top:64px;">02 / UI/UX and websites</p>
       <h2>Pages that ask for the next step.</h2>
       <div class="plan-grid">
-        <article class="plan"><small>Landing</small><h3>$800</h3><p>One page for a book, offer or waitlist.</p><ul><li>Structure and copy blocks</li><li>Mobile first layout</li><li>Form to Gmail or WhatsApp</li><li>One revision</li></ul><a class="pill pill-line" href="contact.html">Build a landing</a></article>
-        <article class="plan"><small>Author or personal site</small><h3>$1,500</h3><p>Home, about, work, contact.</p><ul><li>Up to 5 pages</li><li>UI layout and responsive build</li><li>SEO titles and preview image</li><li>Contact form</li></ul><a class="pill pill-gold" href="contact.html">Build the site</a></article>
-        <article class="plan"><small>Business site</small><h3>$3,500</h3><p>Services, proof and a clear begin path.</p><ul><li>Up to 8 pages</li><li>UI/UX map before build</li><li>On-page SEO</li><li>Two revisions</li></ul><a class="pill pill-line" href="contact.html">Build the brand site</a></article>
+        <article class="plan web"><small>Landing</small><h3>$800</h3><p>One page for a book or offer.</p><ul><li>Mobile first</li><li>Form to Gmail or WhatsApp</li><li>One revision</li></ul><a class="pill" href="contact.html">Build a landing</a></article>
+        <article class="plan web"><small>Author site</small><h3>$1,500</h3><p>Home, about, work, contact.</p><ul><li>Up to 5 pages</li><li>SEO titles</li><li>Contact form</li></ul><a class="pill" href="contact.html">Build the site</a></article>
+        <article class="plan web hot"><small>Business site</small><h3>$3,500</h3><p>Services, proof, begin path.</p><ul><li>Up to 8 pages</li><li>UI/UX map</li><li>Two revisions</li></ul><a class="pill" href="contact.html">Brand site</a></article>
       </div>
       <div class="plan-grid" style="margin-top:18px;">
-        <article class="plan"><small>Full UI/UX + build</small><h3>$6,000</h3><p>Research, wireframes, design system and a built site.</p><ul><li>Short research and sitemap</li><li>Wireframes then high fidelity UI</li><li>Build, launch and handoff</li><li>30 days of fix support</li></ul><a class="pill pill-gold" href="contact.html">Start UI/UX</a></article>
+        <article class="plan web hot"><small>Full UI/UX + build</small><h3>$6,000</h3><p>Research, wireframes, design system, built site.</p><ul><li>Sitemap</li><li>High fidelity UI</li><li>30 days of fixes</li></ul><a class="pill" href="contact.html">Start UI/UX</a></article>
       </div>
-
-      <p class="kicker" style="margin-top:72px;">03 / Social media management</p>
+      <p class="kicker" style="margin-top:64px;">03 / Social media management</p>
       <h2>Monthly retainers.</h2>
       <div class="plan-grid">
-        <article class="plan"><small>Manage</small><h3>$500 / mo</h3><p>One platform. Steady posting.</p><ul><li>8 to 12 posts</li><li>Captions and simple graphics</li><li>Scheduling</li><li>Month-end note</li></ul><a class="pill pill-line" href="contact.html">Start manage</a></article>
-        <article class="plan"><small>Grow</small><h3>$1,000 / mo</h3><p>Two platforms. Content plus replies.</p><ul><li>16 posts</li><li>Stories or short clips</li><li>Community replies</li><li>Weekly check in</li></ul><a class="pill pill-gold" href="contact.html">Start grow</a></article>
-        <article class="plan"><small>Lead</small><h3>$2,000 / mo</h3><p>Three platforms. Strategy in the room.</p><ul><li>20 to 24 posts</li><li>Trailer or ads cuts as needed</li><li>Daily replies in work hours</li><li>Monthly scorecard call</li></ul><a class="pill pill-line" href="contact.html">Start lead</a></article>
+        <article class="plan soc"><small>Manage</small><h3>$500 / mo</h3><p>One platform.</p><ul><li>8 to 12 posts</li><li>Scheduling</li><li>Month-end note</li></ul><a class="pill" href="contact.html">Start manage</a></article>
+        <article class="plan soc"><small>Grow</small><h3>$1,000 / mo</h3><p>Two platforms.</p><ul><li>16 posts</li><li>Replies</li><li>Weekly check in</li></ul><a class="pill" href="contact.html">Start grow</a></article>
+        <article class="plan soc hot"><small>Lead</small><h3>$2,000 / mo</h3><p>Three platforms.</p><ul><li>20 to 24 posts</li><li>Daily replies</li><li>Monthly scorecard</li></ul><a class="pill" href="contact.html">Start lead</a></article>
       </div>
     </div>
   </main>
-  <a href="https://wa.me/2348162287814" class="pill pill-gold" style="position:fixed;right:18px;bottom:18px;z-index:80;">WhatsApp</a>
-  <script src="script.js?v=26"></script>
+  <script src="script.js?v=37"></script>
 </body>
 </html>
