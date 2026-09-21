@@ -1,75 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://philipoladele.com/" />
-  <meta property="og:title" content="Philip Oladele — Digital Growth Strategist" />
-  <meta property="og:description" content="Social media strategist and manager. Web and UI/UX design. Author and book marketing." />
-  <meta property="og:image" content="https://philipoladele.com/philip-oladele.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Philip Oladele — Digital Growth Strategist" />
-  <meta name="twitter:description" content="Social media strategist and manager. Web and UI/UX design. Author and book marketing." />
-  <meta name="twitter:image" content="https://philipoladele.com/philip-oladele.jpg" />
-  <link rel="canonical" href="https://philipoladele.com/" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Philip Oladele | Social Media Strategist and Manager</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=35" />
+  <style>
+    .page { padding-top:110px; padding-bottom:90px; }
+    .page h2 { font-size:clamp(2.4rem,6vw,4.8rem); line-height:.92; max-width:16ch; }
+    .lede { color:#cfc6b6; max-width:48ch; }
+    .about-hero { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; }
+    .portrait { overflow:hidden; border:1px solid rgba(240,217,160,.2); }
+    .portrait img { width:100%; min-height:520px; object-fit:cover; object-position:center 14%; display:block; }
+    .band { display:grid; grid-template-columns:repeat(3,1fr); margin:48px 0; border-top:1px solid rgba(240,217,160,.18); border-bottom:1px solid rgba(240,217,160,.18); }
+    .band div { padding:22px 16px; border-right:1px solid rgba(240,217,160,.12); }
+    .band b { display:block; color:#f0d9a0; font-family:"Cormorant Garamond",Georgia,serif; font-size:1.6rem; font-weight:500; }
+    .crew { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .person { border:1px solid rgba(240,217,160,.16); overflow:hidden; }
+    .person img { width:100%; height:280px; object-fit:cover; display:block; }
+    .person div { padding:16px; }
+    .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
+    @media(max-width:860px){ .about-hero,.band,.crew{grid-template-columns:1fr;} .portrait img{min-height:360px;} }
+  </style>
 </head>
 <body>
   <div class="bg-layer"></div>
   <header class="header" id="site-header">
     <nav class="nav wrap">
-      <a class="logo" href="index.html">Philip Oladele</a>
+      <a class="logo" href="/">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
-            <li><a class="nav-link" href="/">Home</a></li>
-            <li><a class="nav-link active" href="about.html">About</a></li>
-            <li><a class="nav-link" href="services.html">Services</a></li>
-            <li><a class="nav-link" href="process.html">Process</a></li>
-            <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-            <li><a class="nav-link" href="projects.html">Work</a></li>
-            <li><a class="nav-link" href="reviews.html">Reviews</a></li>
-            <li><a class="nav-link" href="faq.html">FAQ</a></li>
-            <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link active" href="about.html">About</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="process.html">Process</a></li>
+        <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav-link" href="projects.html">Work</a></li>
+        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker reveal">About</p>
-      <h2 class="reveal">A strategist who treats social as a business system</h2>
-      <div class="split">
+      <p class="kicker">About</p>
+      <div class="about-hero">
         <div>
-          <p class="lede reveal" style="margin-bottom:16px;">My name is Philip Oladele. I am a certified professional social media strategist. I make things happen, and I am good at what I do.</p>
-          <p class="lede reveal" style="margin-bottom:16px;">I am not here to post for the sake of posting. I am here to understand the brand, see where it can go, and build the journey from stranger to client.</p>
-          <p class="lede reveal">Your success as a brand is directly proportional to my success as your partner. That is the standard I work to.</p>
+          <h2>A strategist who treats social as a business system.</h2>
+          <p class="lede">Philip Oladele. Certified professional social media strategist and manager. I map the brand and build the path from stranger to client.</p>
         </div>
-        <div>
-          <p class="kicker reveal">Who I have served</p>
-          <p class="lede reveal">Michael Vecchione, Jimmy Dennedy, Benjamin Moe, Teresa Michael, B.G. Howard, Aryn Alyssabeth, Meagan Poetschlag, R.L. Corbit, Jessica King and Victoria Reiby.</p>
-        </div>
+        <div class="portrait"><img src="philip-oladele.jpg" alt="Philip Oladele" /></div>
       </div>
-      <p class="kicker reveal" style="margin-top:56px;">The studio</p>
-      <h2 class="reveal">A small team with complementary craft</h2>
-      <div class="team">
-        <article class="person reveal"><img src="philip-oladele.jpg" alt="Philip Oladele" /><h3>Philip Oladele</h3><p>Social media marketing strategist. Strategy, growth and client success.</p></article>
-        <article class="person reveal reveal-delay-1"><img src="esthanova.jpg" alt="Esthanova" style="object-position:center 12%;" /><h3>Esthanova</h3><p>UI/UX, customer service and content strategy.</p></article>
-        <article class="person reveal reveal-delay-2"><img src="daniel-oladele.jpg" alt="Daniel Oladele" /><h3>Daniel Oladele</h3><p>Graphics and video editing. Visuals, motion and trailers.</p></article>
+      <div class="band">
+        <div><b>Social</b>Strategy and management</div>
+        <div><b>Web</b>UI/UX and sites</div>
+        <div><b>Books</b>Trailers and campaigns</div>
       </div>
+      <p class="kicker">Who I have served</p>
+      <p class="lede">Michael Vecchione, Jimmy Dennedy, Benjamin Moe, Teresa Michael, B.G. Howard, Aryn Alyssabeth, Meagan Poetschlag, R.L. Corbit, Jessica King and Victoria Reiby.</p>
+      <p class="kicker" style="margin-top:56px;">The studio</p>
+      <h2>A small team. Complementary craft.</h2>
+      <div class="crew">
+        <article class="person"><img src="philip-oladele.jpg" alt="Philip Oladele" /><div><h3>Philip Oladele</h3><p>Strategy, growth and client success.</p></div></article>
+        <article class="person"><img src="esthanova.jpg" alt="Esthanova" style="object-position:center 12%;" /><div><h3>Esthanova</h3><p>UI/UX, customer service and content strategy.</p></div></article>
+        <article class="person"><img src="daniel-oladele.jpg" alt="Daniel Oladele" /><div><h3>Daniel Oladele</h3><p>Graphics, motion and trailers.</p></div></article>
+      </div>
+      <p style="margin-top:40px;"><a class="pill" href="contact.html">Work with the studio</a></p>
     </div>
   </main>
-  <footer>
-    <div class="foot wrap">
-      <div>Philip Oladele</div>
-      <div><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Work</a><a href="contact.html">Begin</a></div>
-    </div>
-  </footer>
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=35"></script>
 </body>
 </html>
