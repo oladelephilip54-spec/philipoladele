@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://philipoladele.com/" />
-  <meta property="og:title" content="Philip Oladele — Digital Growth Strategist" />
-  <meta property="og:description" content="Social media strategist and manager. Web and UI/UX design. Author and book marketing." />
-  <meta property="og:image" content="https://philipoladele.com/philip-oladele.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Philip Oladele — Digital Growth Strategist" />
-  <meta name="twitter:description" content="Social media strategist and manager. Web and UI/UX design. Author and book marketing." />
-  <meta name="twitter:image" content="https://philipoladele.com/philip-oladele.jpg" />
-  <link rel="canonical" href="https://philipoladele.com/" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work and Case Studies | Philip Oladele</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=34" />
+  <style>
+    .page { padding-top:100px; padding-bottom:80px; }
+    .hero-work { position:relative; overflow:hidden; border:1px solid rgba(240,217,160,.18); min-height:72vh; display:grid; place-items:end start; }
+    .hero-work img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.08); animation:ken 18s ease-in-out infinite alternate; }
+    @keyframes ken { to { transform:scale(1.16) translateY(-3%); } }
+    .hero-work .veil { position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,4,3,.15),rgba(5,4,3,.78) 70%); }
+    .hero-copy { position:relative; z-index:2; padding:40px 36px; max-width:42rem; }
+    .hero-copy h2 { font-size:clamp(3rem,8vw,6.2rem); line-height:.88; margin:8px 0 12px; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(240,217,160,.2); border-bottom:1px solid rgba(240,217,160,.2); margin:28px 0 56px; }
+    .metrics div { padding:22px 16px; border-right:1px solid rgba(240,217,160,.12); }
+    .metrics b { display:block; font-family:"Cormorant Garamond",Georgia,serif; font-size:2rem; color:#f0d9a0; font-weight:500; }
+    .row { display:grid; grid-template-columns:160px 1fr auto; gap:24px; padding:26px 0; border-top:1px solid rgba(240,217,160,.14); }
+    .row:hover { background:rgba(240,217,160,.04); padding-left:12px; }
+    .row b { color:#f0d9a0; }
+    .row span { color:#8f8576; font-size:.85rem; }
+    .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
+    .ghost { border:1px solid rgba(240,217,160,.4); color:#f0d9a0; background:transparent; }
+    @media(max-width:800px){ .metrics{grid-template-columns:1fr 1fr;} .row{grid-template-columns:1fr;} }
+  </style>
 </head>
 <body>
   <div class="bg-layer"></div>
   <header class="header" id="site-header">
     <nav class="nav wrap">
-      <a class="logo" href="index.html">Philip Oladele</a>
+      <a class="logo" href="/">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
-            <li><a class="nav-link" href="/">Home</a></li>
-            <li><a class="nav-link active" href="about.html">About</a></li>
-            <li><a class="nav-link" href="services.html">Services</a></li>
-            <li><a class="nav-link" href="process.html">Process</a></li>
-            <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-            <li><a class="nav-link" href="projects.html">Work</a></li>
-            <li><a class="nav-link" href="reviews.html">Reviews</a></li>
-            <li><a class="nav-link" href="faq.html">FAQ</a></li>
-            <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="process.html">Process</a></li>
+        <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav-link active" href="projects.html">Work</a></li>
+        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker reveal">Work</p>
-      <h2 class="reveal">Selected systems</h2>
-      <div class="work">
-        <article class="reveal">
-          <img src="hard-guys-cry.jpg" alt="Hard Guys Cry 3D book render" />
-          <div class="copy"><span class="tag">Live</span><h3>Hard Guys Cry</h3><p>Michael Vecchione. Book campaign with trailer, landing page and social distribution for the Jimmy Dennedy story.</p></div>
-        </article>
-        <article class="reveal reveal-delay-1">
-          <img src="nexus-hub.jpg" alt="Nexus Author Hub 3D mockup" />
-          <div class="copy"><span class="tag">In progress</span><h3>Nexus Author Hub</h3><p>Multi-author platform with launch pages, trailer modules and newsletter capture.</p></div>
-        </article>
-        <article class="reveal reveal-delay-2">
-          <img src="velocity-os.jpg" alt="Velocity Growth OS 3D dashboard" />
-          <div class="copy"><span class="tag">In progress</span><h3>Velocity Growth OS</h3><p>Internal growth system: calendar, dashboard, pipeline and client reporting.</p></div>
-        </article>
+      <p class="kicker">Selected work</p>
+      <div class="hero-work" style="margin-top:22px;">
+        <img src="hard-guys-cry.jpg" alt="Hard Guys Cry" />
+        <div class="veil"></div>
+        <div class="hero-copy">
+          <p class="kicker">01 / Live campaign</p>
+          <h2>Hard Guys Cry</h2>
+          <p>Michael Vecchione. The book was written. The public path was not.</p>
+          <p style="margin-top:18px;"><a class="pill" href="case-hard-guys.html">Open the case</a></p>
+        </div>
       </div>
+      <div class="metrics">
+        <div><b>109K+</b>Facebook video views</div>
+        <div><b>+74%</b>in the tracked window</div>
+        <div><b>3.7K</b>3-second views</div>
+        <div><b>Sold</b>bookstore night</div>
+      </div>
+      <p class="kicker">Also delivered</p>
+      <div class="row"><b>B.G. Howard</b><div>Fiction trailer for every platform.</div><span>Trailer</span></div>
+      <div class="row"><b>Teresa Michael</b><div>Trailer updates on time.</div><span>Trailer</span></div>
+      <div class="row"><b>Benjamin Moe</b><div>Author social and launch help.</div><span>Campaign</span></div>
+      <div class="row"><b>Jimmy Dennedy story</b><div>Event publicity.</div><span>Publicity</span></div>
+      <div class="row"><b>Returning author</b><div>Fall rewrite. Name withheld.</div><span>Retainer talk</span></div>
+      <div class="row"><b>Aryn Alyssabeth</b><div>Author and personal brand.</div><span>Social</span></div>
+      <div class="row"><b>Meagan Poetschlag</b><div>Author engagement.</div><span>Social</span></div>
+      <div class="row"><b>R.L. Corbit</b><div>Author engagement.</div><span>Social</span></div>
+      <div class="row"><b>Jessica King</b><div>Author engagement.</div><span>Social</span></div>
+      <div class="row"><b>Victoria Reiby</b><div>Author engagement.</div><span>Social</span></div>
+      <p style="margin-top:40px;"><a class="pill" href="contact.html">Brief the next one</a></p>
     </div>
   </main>
-  <footer>
-    <div class="foot wrap">
-      <div>Philip Oladele</div>
-      <div><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Work</a><a href="contact.html">Begin</a></div>
-    </div>
-  </footer>
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=34"></script>
 </body>
 </html>
