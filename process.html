@@ -6,23 +6,27 @@
   <title>Process | Philip Oladele</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=27" />
+  <link rel="stylesheet" href="styles.css?v=39" />
   <style>
-    .page { padding-top:120px; padding-bottom:100px; }
-    .page h2 { font-size:clamp(2.4rem,6vw,4.6rem); line-height:.95; max-width:16ch; }
-    .page .lede { max-width:48ch; color:#cfc6b6; }
-    .step-row { display:grid; grid-template-columns:140px 1fr; gap:28px; padding:40px 0; border-top:1px solid rgba(240,217,160,.15); }
-    .step-row b { font-family:"Cormorant Garamond",Georgia,serif; font-size:2.8rem; color:#f0d9a0; font-weight:500; }
+    #gl, #dust { position:fixed; inset:0; pointer-events:none; }
+    #gl { z-index:0; }
+    #dust { z-index:1; }
+    .page { position:relative; z-index:2; padding-top:120px; padding-bottom:100px; }
+    .page h2 { font-size:clamp(2.4rem,6vw,4.8rem); line-height:.92; max-width:16ch; }
+    .lede { max-width:48ch; color:#cfc6b6; }
+    .step-row { display:grid; grid-template-columns:140px 1fr; gap:28px; padding:40px 0; border-top:1px solid rgba(240,217,160,.16); background:linear-gradient(90deg,rgba(240,217,160,.03),transparent 55%); }
+    .step-row b { font-family:"Cormorant Garamond",Georgia,serif; font-size:2.8rem; color:#f0d9a0; font-weight:500; text-shadow:0 0 18px rgba(255,140,40,.35); }
     .step-row h3 { margin:0 0 10px; font-size:1.85rem; }
-    .step-row p { color:#cfc6b6; max-width:62ch; }
     .methods { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
     .methods span { border:1px solid rgba(240,217,160,.25); color:#e8d7b0; font-size:12px; padding:6px 10px; border-radius:999px; }
     .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
     @media(max-width:800px){ .step-row{grid-template-columns:1fr;} }
+    @media (prefers-reduced-motion: reduce) { #gl,#dust { display:none; } }
   </style>
 </head>
 <body>
-  <div class="bg-layer"></div>
+  <canvas id="gl"></canvas>
+  <canvas id="dust"></canvas>
   <header class="header" id="site-header">
     <nav class="nav wrap">
       <a class="logo" href="/">Philip Oladele</a>
@@ -43,7 +47,7 @@
     <div class="wrap">
       <p class="kicker">Process</p>
       <h2>Find the real problem. Then build the thing that fixes it.</h2>
-      <p class="lede">Double Diamond, plus measure. Same spine for social, websites and book campaigns.</p>
+      <p class="lede">Double Diamond, then measure. Same spine for social, websites and book campaigns.</p>
       <div class="step-row"><b>01</b><div><h3>Discover</h3><p>Learn who the buyer is and where they drop off. No posting yet.</p><div class="methods"><span>Account audit</span><span>Audience map</span><span>Competitor scan</span><span>Page walkthrough</span></div></div></div>
       <div class="step-row"><b>02</b><div><h3>Define</h3><p>One problem sentence. One platform or page. One next step.</p><div class="methods"><span>Problem statement</span><span>Content pillars</span><span>Sitemap</span><span>Success metric</span></div></div></div>
       <div class="step-row"><b>03</b><div><h3>Develop</h3><p>Drafts first. Captions, trailer cuts, wireframes. Clear beats busy.</p><div class="methods"><span>Calendar</span><span>Wireframes</span><span>Trailer cuts</span><span>Prototype</span></div></div></div>
@@ -56,6 +60,56 @@
       <p style="margin-top:48px;"><a class="pill" href="contact.html">Book the scorecard</a></p>
     </div>
   </main>
-  <script src="script.js?v=27"></script>
+  <script src="script.js?v=39"></script>
+  <script>
+    (function () {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const canvas = document.getElementById("gl");
+      const gl = canvas.getContext("webgl");
+      if (gl) {
+        const vs = "attribute vec2 a; void main(){ gl_Position=vec4(a,0,1); }";
+        const fs = "precision mediump float; uniform float t; uniform vec2 r; void main(){ vec2 p=(gl_FragCoord.xy/r)*2.0-1.0; p.x*=r.x/r.y; float n=0.35+0.25*sin(length(p)*6.0-t); vec3 c=mix(vec3(0.03,0.02,0.015),vec3(0.55,0.28,0.06),n*0.45); c+=vec3(0.9,0.65,0.25)*smoothstep(0.7,1.0,n); gl_FragColor=vec4(c,0.55); }";
+        function sh(type, src){ const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+        const pr = gl.createProgram();
+        gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs));
+        gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs));
+        gl.linkProgram(pr); gl.useProgram(pr);
+        const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,3,-1,-1,3]), gl.STATIC_DRAW);
+        const loc = gl.getAttribLocation(pr,"a"); gl.enableVertexAttribArray(loc);
+        gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+        const ut = gl.getUniformLocation(pr,"t"); const ur = gl.getUniformLocation(pr,"r");
+        function resize(){ canvas.width=innerWidth; canvas.height=innerHeight; gl.viewport(0,0,canvas.width,canvas.height); }
+        resize(); addEventListener("resize", resize);
+        const t0 = performance.now();
+        function draw(now){
+          gl.uniform1f(ut, (now-t0)/1000);
+          gl.uniform2f(ur, canvas.width, canvas.height);
+          gl.drawArrays(gl.TRIANGLES,0,3);
+          requestAnimationFrame(draw);
+        }
+        requestAnimationFrame(draw);
+      }
+      const d = document.getElementById("dust");
+      const ctx = d.getContext("2d");
+      let w,h,ps;
+      function size(){
+        w=d.width=innerWidth; h=d.height=innerHeight;
+        const n = w<700?24:48;
+        ps=Array.from({length:n},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.2,v:Math.random()*.5+.1,a:Math.random()*.5+.2}));
+      }
+      size(); addEventListener("resize", size);
+      function tick(){
+        ctx.clearRect(0,0,w,h);
+        for(const p of ps){
+          p.y-=p.v; if(p.y<-4){p.y=h+4;p.x=Math.random()*w;}
+          ctx.fillStyle="rgba(255,210,120,"+p.a+")";
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.28); ctx.fill();
+        }
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+  </script>
 </body>
 </html>
