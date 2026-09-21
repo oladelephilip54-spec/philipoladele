@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work and Case Studies | Philip Oladele</title>
+  <title>Process | Philip Oladele</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=27" />
   <style>
-    .page { padding-top:120px; padding-bottom:90px; }
+    .page { padding-top:120px; padding-bottom:100px; }
     .page h2 { font-size:clamp(2.4rem,6vw,4.6rem); line-height:.95; max-width:16ch; }
-    .lede { max-width:50ch; color:#cfc6b6; }
-    .case { display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; margin:40px 0 20px; }
-    .case img { width:100%; border:1px solid rgba(240,217,160,.2); }
-    .facts { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px; }
-    .fact { border-top:1px solid rgba(240,217,160,.2); padding-top:12px; }
-    .fact small { display:block; letter-spacing:.18em; text-transform:uppercase; color:#d4af6a; font-size:11px; margin-bottom:6px; }
-    .row { display:grid; grid-template-columns:180px 1fr; gap:24px; padding:22px 0; border-top:1px solid rgba(240,217,160,.15); }
-    .row b { color:#f0d9a0; }
+    .page .lede { max-width:48ch; color:#cfc6b6; }
+    .step-row { display:grid; grid-template-columns:140px 1fr; gap:28px; padding:40px 0; border-top:1px solid rgba(240,217,160,.15); }
+    .step-row b { font-family:"Cormorant Garamond",Georgia,serif; font-size:2.8rem; color:#f0d9a0; font-weight:500; }
+    .step-row h3 { margin:0 0 10px; font-size:1.85rem; }
+    .step-row p { color:#cfc6b6; max-width:62ch; }
+    .methods { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .methods span { border:1px solid rgba(240,217,160,.25); color:#e8d7b0; font-size:12px; padding:6px 10px; border-radius:999px; }
     .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
-    @media(max-width:860px){ .case,.row,.facts{grid-template-columns:1fr;} }
+    @media(max-width:800px){ .step-row{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
@@ -31,10 +30,9 @@
         <li><a class="nav-link" href="/">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
-        <li><a class="nav-link" href="process.html">Process</a></li>
+        <li><a class="nav-link active" href="process.html">Process</a></li>
         <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li><a class="nav-link active" href="projects.html">Work</a></li>
-        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
+        <li><a class="nav-link" href="projects.html">Work</a></li>
         <li><a class="nav-link" href="faq.html">FAQ</a></li>
         <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
@@ -43,43 +41,21 @@
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker">Work</p>
-      <h2>Proof first. Then the other names.</h2>
-      <p class="lede">Featured case is live. Numbers come from campaign dashboards.</p>
-
-      <div class="case">
-        <img src="hard-guys-cry.jpg" alt="Hard Guys Cry" />
-        <div>
-          <p class="kicker">Featured case</p>
-          <h2>Hard Guys Cry</h2>
-          <p class="lede">Michael Vecchione. The book was strong. Discovery was thin. Job: notice, trust, buy.</p>
-          <div class="facts">
-            <div class="fact"><small>Problem</small>No consistent public path.</div>
-            <div class="fact"><small>Work</small>Social, trailer cuts, event publicity.</div>
-            <div class="fact"><small>Result</small>109K+ Facebook video views, +74%.</div>
-            <div class="fact"><small>Client</small>Bookstore night sold through.</div>
-          </div>
-          <p style="margin-top:22px;"><a class="pill" href="case-hard-guys.html">Open the full case</a></p>
-        </div>
-      </div>
-
-      <div class="facts">
-        <div class="fact"><small>109K+</small>Facebook video views</div>
-        <div class="fact"><small>3.7K</small>3-second views, +62%</div>
-        <div class="fact"><small>178</small>1-minute views, +24%</div>
-        <div class="fact"><small>12.7K</small>7-day impressions, +70%</div>
-      </div>
-
-      <p class="kicker" style="margin-top:48px;">Also in the book of work</p>
-      <div class="row"><b>B.G. Howard</b><div>Fiction trailer. Cut ready across platforms.</div></div>
-      <div class="row"><b>Teresa Michael</b><div>Author presence. Review on the Reviews page.</div></div>
-      <div class="row"><b>Benjamin Moe</b><div>Author social and launch help.</div></div>
-      <div class="row"><b>Jimmy Dennedy story</b><div>Publicity around Hard Guys Cry events.</div></div>
-      <div class="row"><b>Aryn Alyssabeth, Meagan Poetschlag, R.L. Corbit, Jessica King, Victoria Reiby</b><div>Author and personal-brand work. Not every file is public.</div></div>
-
-      <p style="margin-top:40px;"><a class="pill" href="contact.html">Brief a similar job</a></p>
+      <p class="kicker">Process</p>
+      <h2>Find the real problem. Then build the thing that fixes it.</h2>
+      <p class="lede">Double Diamond, plus measure. Same spine for social, websites and book campaigns.</p>
+      <div class="step-row"><b>01</b><div><h3>Discover</h3><p>Learn who the buyer is and where they drop off. No posting yet.</p><div class="methods"><span>Account audit</span><span>Audience map</span><span>Competitor scan</span><span>Page walkthrough</span></div></div></div>
+      <div class="step-row"><b>02</b><div><h3>Define</h3><p>One problem sentence. One platform or page. One next step.</p><div class="methods"><span>Problem statement</span><span>Content pillars</span><span>Sitemap</span><span>Success metric</span></div></div></div>
+      <div class="step-row"><b>03</b><div><h3>Develop</h3><p>Drafts first. Captions, trailer cuts, wireframes. Clear beats busy.</p><div class="methods"><span>Calendar</span><span>Wireframes</span><span>Trailer cuts</span><span>Prototype</span></div></div></div>
+      <div class="step-row"><b>04</b><div><h3>Deliver</h3><p>Publish and launch. Everything points to the book, the page or WhatsApp.</p><div class="methods"><span>Post</span><span>Launch</span><span>Replies</span><span>Seeding</span></div></div></div>
+      <div class="step-row"><b>05</b><div><h3>Measure</h3><p>Read the numbers. Kill what is dead. Double what works.</p><div class="methods"><span>Dashboard</span><span>What to kill</span><span>What to double</span><span>Scorecard</span></div></div></div>
+      <p class="kicker" style="margin-top:56px;">How it maps</p>
+      <div class="step-row"><b>Social</b><div><h3>Audit, pillars, calendar, replies, report</h3></div></div>
+      <div class="step-row"><b>Web</b><div><h3>Research, map, wireframe, UI, build</h3></div></div>
+      <div class="step-row"><b>Books</b><div><h3>Hook, trailer, distribution, proof</h3></div></div>
+      <p style="margin-top:48px;"><a class="pill" href="contact.html">Book the scorecard</a></p>
     </div>
   </main>
-  <script src="script.js?v=28"></script>
+  <script src="script.js?v=27"></script>
 </body>
 </html>
