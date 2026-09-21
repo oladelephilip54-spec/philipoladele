@@ -6,14 +6,19 @@
   <title>Process | Philip Oladele</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=25" />
+  <link rel="stylesheet" href="styles.css?v=27" />
   <style>
     .page { padding-top:120px; padding-bottom:100px; }
-    .page h2 { font-size:clamp(2.6rem,7vw,5rem); line-height:.95; max-width:16ch; }
-    .step-row { display:grid; grid-template-columns:120px 1fr; gap:24px; padding:36px 0; border-top:1px solid rgba(240,217,160,.15); }
-    .step-row b { font-family:"Cormorant Garamond",Georgia,serif; font-size:3rem; color:#f0d9a0; font-weight:500; }
+    .page h2 { font-size:clamp(2.4rem,6vw,4.6rem); line-height:.95; max-width:16ch; }
+    .page .lede { max-width:48ch; color:#cfc6b6; }
+    .step-row { display:grid; grid-template-columns:140px 1fr; gap:28px; padding:40px 0; border-top:1px solid rgba(240,217,160,.15); }
+    .step-row b { font-family:"Cormorant Garamond",Georgia,serif; font-size:2.8rem; color:#f0d9a0; font-weight:500; }
+    .step-row h3 { margin:0 0 10px; font-size:1.85rem; }
+    .step-row p { color:#cfc6b6; max-width:62ch; }
+    .methods { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .methods span { border:1px solid rgba(240,217,160,.25); color:#e8d7b0; font-size:12px; padding:6px 10px; border-radius:999px; }
     .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
-    @media(max-width:900px){ .step-row{grid-template-columns:1fr;} }
+    @media(max-width:800px){ .step-row{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
@@ -36,17 +41,23 @@
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker">How it works</p>
-      <h2>Five moves. One system.</h2>
-      <p class="lede">Not more posts. A path from stranger to advocate.</p>
-      <div class="step-row"><b>01</b><div><h3>Discover</h3><p>Brand, audience, pages. Scorecard in 15 minutes.</p></div></div>
-      <div class="step-row"><b>02</b><div><h3>Strategize</h3><p>Every asset gets a job: attention, trust, conversion or advocacy.</p></div></div>
-      <div class="step-row"><b>03</b><div><h3>Create</h3><p>Calendars, captions, graphics, trailers, pages.</p></div></div>
-      <div class="step-row"><b>04</b><div><h3>Distribute</h3><p>Publish, reply, send people to one next step.</p></div></div>
-      <div class="step-row"><b>05</b><div><h3>Learn</h3><p>Read the numbers. Change the next cycle.</p></div></div>
-      <p style="margin-top:40px;"><a class="pill" href="contact.html">Book the scorecard</a></p>
+      <p class="kicker">Process</p>
+      <h2>Find the real problem. Then build the thing that fixes it.</h2>
+      <p class="lede">Double Diamond, plus measure. Same spine for social, websites and book campaigns.</p>
+
+      <div class="step-row"><b>01</b><div><h3>Discover</h3><p>Learn who the buyer is and where they drop off. No posting yet.</p><div class="methods"><span>Account audit</span><span>Audience map</span><span>Competitor scan</span><span>Page walkthrough</span></div></div></div>
+      <div class="step-row"><b>02</b><div><h3>Define</h3><p>One problem sentence. One platform or page. One next step.</p><div class="methods"><span>Problem statement</span><span>Content pillars</span><span>Sitemap</span><span>Success metric</span></div></div></div>
+      <div class="step-row"><b>03</b><div><h3>Develop</h3><p>Drafts first. Captions, trailer cuts, wireframes. Clear beats busy.</p><div class="methods"><span>Calendar</span><span>Wireframes</span><span>Trailer cuts</span><span>Prototype</span></div></div></div>
+      <div class="step-row"><b>04</b><div><h3>Deliver</h3><p>Publish and launch. Everything points to the book, the page or WhatsApp.</p><div class="methods"><span>Post</span><span>Launch</span><span>Replies</span><span>Seeding</span></div></div></div>
+      <div class="step-row"><b>05</b><div><h3>Measure</h3><p>Read the numbers. Kill what is dead. Double what works.</p><div class="methods"><span>Dashboard</span><span>What to kill</span><span>What to double</span><span>Scorecard</span></div></div></div>
+
+      <p class="kicker" style="margin-top:56px;">How it maps</p>
+      <div class="step-row"><b>Social</b><div><h3>Audit, pillars, calendar, replies, report</h3></div></div>
+      <div class="step-row"><b>Web</b><div><h3>Research, map, wireframe, UI, build</h3></div></div>
+      <div class="step-row"><b>Books</b><div><h3>Hook, trailer, distribution, proof</h3></div></div>
+      <p style="margin-top:48px;"><a class="pill" href="contact.html">Book the scorecard</a></p>
     </div>
   </main>
-  <script src="script.js?v=25"></script>
+  <script src="script.js?v=27"></script>
 </body>
 </html>
