@@ -38,6 +38,32 @@
       .nav-menu { display:none; }
       .nav-menu.open { display:flex; flex-direction:column; position:absolute; right:16px; top:64px; background:#120f0c; padding:16px; border:1px solid rgba(240,217,160,.2); }
     }
+    <style>
+    .glow-layer { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+    .glow-layer b { position:absolute; border-radius:50%; filter:blur(80px); opacity:.35; animation:drift 14s ease-in-out infinite alternate; }
+    .glow-layer b:nth-child(1){ width:42vw; height:42vw; left:-8%; top:-8%; background:#7a3e10; }
+    .glow-layer b:nth-child(2){ width:32vw; height:32vw; right:-6%; top:30%; background:#c45a12; animation-duration:18s; }
+    .glow-layer b:nth-child(3){ width:28vw; height:28vw; left:35%; bottom:-12%; background:#f0d9a0; opacity:.12; animation-duration:20s; }
+    @keyframes drift { to { transform:translate(5%,6%) scale(1.12); } }
+    #sparks { position:fixed; inset:0; z-index:1; pointer-events:none; }
+    .hero h1 span {
+      background:linear-gradient(90deg,#f0d9a0,#ff6a00,#ffd36a,#f0d9a0);
+      background-size:200% 100%;
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      animation:emberText 4s linear infinite;
+    }
+    @keyframes emberText { to { background-position:200% 0; } }
+    .photo img { box-shadow:0 0 40px rgba(255,120,20,.18), 0 0 80px rgba(240,217,160,.08); animation:portraitGlow 4s ease-in-out infinite alternate; }
+    @keyframes portraitGlow { to { box-shadow:0 0 70px rgba(255,120,20,.32), 0 0 120px rgba(240,217,160,.16); } }
+    @media (max-width: 700px) {
+      .glow-layer b { opacity:.22; }
+      #sparks { opacity:.55; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .glow-layer b, .hero h1 span, .photo img { animation:none; }
+      #sparks { display:none; }
+    }
+  </style>
   </style>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
@@ -180,6 +206,8 @@
   </style>
 </head>
 <body class="loading">
+  <div class="glow-layer" aria-hidden="true"><b></b><b></b><b></b></div>
+  <canvas id="sparks"></canvas>
   <div class="bg-layer"></div>
 
   <div id="preloader" aria-hidden="true">
@@ -372,5 +400,40 @@
     </div>
   </footer>
   <script src="script.js?v=23"></script>
+  <script>
+    (function () {
+      const c = document.getElementById("sparks");
+      if (!c || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const x = c.getContext("2d");
+      let w, h, dots;
+      function size() {
+        w = c.width = innerWidth;
+        h = c.height = innerHeight;
+        const n = w < 700 ? 28 : 55;
+        dots = Array.from({ length: n }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.6 + .3,
+          v: Math.random() * .45 + .15,
+          a: Math.random() * .6 + .2
+        }));
+      }
+      size();
+      addEventListener("resize", size);
+      function tick() {
+        x.clearRect(0, 0, w, h);
+        for (const d of dots) {
+          d.y -= d.v;
+          if (d.y < -4) { d.y = h + 4; d.x = Math.random() * w; }
+          x.beginPath();
+          x.fillStyle = "rgba(255,210,120," + d.a + ")";
+          x.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+          x.fill();
+        }
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+  </script>
 </body>
 </html>
