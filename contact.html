@@ -6,23 +6,30 @@
   <title>Contact Philip Oladele | Start a Project</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=30" />
+  <link rel="stylesheet" href="styles.css?v=31" />
   <style>
     .page { padding-top:110px; padding-bottom:90px; }
-    .page h2 { font-size:clamp(2.2rem,6vw,4.2rem); line-height:.95; max-width:16ch; }
-    .lede { color:#cfc6b6; max-width:46ch; }
-    .split { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-    .chat { background:rgba(12,10,8,.75); border:1px solid rgba(240,217,160,.16); border-radius:22px; padding:22px; }
-    .bubble { max-width:88%; padding:12px 14px; border-radius:16px; margin:10px 0; line-height:1.45; }
-    .them { background:#1c1814; color:#f3ead8; border-bottom-left-radius:4px; }
-    .me { background:#f0d9a0; color:#1a140c; margin-left:auto; border-bottom-right-radius:4px; }
-    .meta { display:flex; align-items:center; gap:8px; font-size:12px; color:#b7aa94; }
-    .dot { width:28px; height:28px; border-radius:50%; background:#f0d9a0; color:#1a140c; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:11px; }
-    .step { letter-spacing:.18em; text-transform:uppercase; color:#d4af6a; font-size:11px; margin:18px 0 8px; }
+    .page h2 { font-size:clamp(2.2rem,6vw,4.2rem); line-height:.95; max-width:14ch; }
+    .split { display:grid; grid-template-columns:1.05fr .95fr; gap:42px; }
+    .chat { background:rgba(12,10,8,.8); border:1px solid rgba(240,217,160,.16); border-radius:24px; padding:20px; min-height:420px; }
+    .line { display:flex; gap:10px; align-items:flex-end; margin:14px 0; opacity:0; transform:translateY(12px); animation:rise .55s cubic-bezier(.22,1,.36,1) forwards; }
+    .line.right { flex-direction:row-reverse; }
+    .line:nth-child(1){animation-delay:.2s} .line:nth-child(2){animation-delay:.7s}
+    .line:nth-child(3){animation-delay:1.2s} .line:nth-child(4){animation-delay:1.8s}
+    .line:nth-child(5){animation-delay:2.4s} .line:nth-child(6){animation-delay:3s}
+    @keyframes rise { to { opacity:1; transform:none; } }
+    .av { width:36px; height:36px; border-radius:50%; object-fit:cover; object-position:center 18%; flex:none; }
+    .av.g { background:#2a241c; color:#f0d9a0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; }
+    .bubble { max-width:78%; padding:12px 14px; border-radius:18px; line-height:1.45; }
+    .guest { background:#1c1814; color:#f3ead8; border-bottom-left-radius:4px; }
+    .host { background:#f0d9a0; color:#1a140c; border-bottom-right-radius:4px; }
+    .who { font-size:11px; color:#b7aa94; margin:0 46px 2px; }
+    .who.r { text-align:right; }
+    .step { letter-spacing:.18em; text-transform:uppercase; color:#d4af6a; font-size:11px; margin:0 0 10px; }
     form label { display:block; margin:12px 0 6px; font-size:13px; color:#d4af6a; }
     form input, form textarea, form select { width:100%; background:#120f0c; border:1px solid rgba(240,217,160,.22); color:#f3ead8; padding:12px; border-radius:10px; }
-    form textarea { min-height:120px; }
-    .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; border:0; cursor:pointer; }
+    form textarea { min-height:110px; }
+    .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; border:0; }
     @media(max-width:860px){ .split{grid-template-columns:1fr;} }
   </style>
 </head>
@@ -48,34 +55,28 @@
   <main class="section page">
     <div class="wrap">
       <p class="kicker">Begin</p>
-      <h2>How a project actually starts.</h2>
-      <div class="split" style="margin-top:36px;">
+      <h2>Send a link. Start the work.</h2>
+      <div class="split" style="margin-top:32px;">
         <div>
-          <p class="step">Step 1 · The chat</p>
+          <p class="step">The conversation</p>
           <div class="chat">
-            <div class="meta"><div class="dot">AU</div> Author</div>
-            <div class="bubble them">The book is out. People who already know me buy it. Strangers do not.</div>
-            <div class="meta" style="justify-content:flex-end;"><div class="dot">PO</div> Philip</div>
-            <div class="bubble me">Posting more of the cover will not fix it. We need a hook, a trailer and one page that asks for the sale.</div>
-            <div class="bubble them">I do not want to look noisy.</div>
-            <div class="bubble me">You will not. One platform first. Fifteen minute scorecard. Then we price the sprint or the month.</div>
-            <div class="bubble them">What do you need from me?</div>
-            <div class="bubble me">The book file or link, your pages, and one decision maker. Send the brief on the right.</div>
+            <div class="line"><div class="av g">CL</div><div><div class="who">Client</div><div class="bubble guest">Know anyone who can run social and a page for a launch?</div></div></div>
+            <div class="line right"><img class="av" src="philip-oladele.jpg" alt="Philip Oladele" /><div><div class="who r">Philip Oladele</div><div class="bubble host">That is the studio. Social, UI/UX, trailers. Scorecard first. Then we pick the plan.</div></div></div>
+            <div class="line"><div class="av g">CL</div><div><div class="who">Client</div><div class="bubble guest">How fast?</div></div></div>
+            <div class="line right"><img class="av" src="philip-oladele.jpg" alt="Philip Oladele" /><div><div class="who r">Philip Oladele</div><div class="bubble host">Trailer in days. Sprint in two weeks. Site on a timeline you choose on the form.</div></div></div>
+            <div class="line"><div class="av g">CL</div><div><div class="who">Client</div><div class="bubble guest">Send me the start link.</div></div></div>
+            <div class="line right"><img class="av" src="philip-oladele.jpg" alt="Philip Oladele" /><div><div class="who r">Philip Oladele</div><div class="bubble host">philipoladele.com/contact · Get started on the right.</div></div></div>
           </div>
-          <p class="step">Step 2 · Or WhatsApp</p>
-          <p><a class="pill" href="https://wa.me/2348162287814">Open WhatsApp</a></p>
         </div>
         <div>
-          <p class="step">Step 3 · Get started</p>
-          <h2>Send the brief.</h2>
+          <p class="step">Get started</p>
+          <h2>Your brief.</h2>
           <form action="https://formsubmit.co/philipteam51@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New project enquiry from philipoladele.com" />
             <input type="hidden" name="_captcha" value="false" />
-            <label>Name</label>
-            <input name="name" type="text" required />
-            <label>Email</label>
-            <input name="email" type="email" required />
-            <label>What do you need</label>
+            <label>Name</label><input name="name" type="text" required />
+            <label>Email</label><input name="email" type="email" required />
+            <label>Service</label>
             <select name="service">
               <option>Social media management</option>
               <option>Book trailer $100</option>
@@ -83,14 +84,23 @@
               <option>Website / UI UX</option>
               <option>Not sure yet</option>
             </select>
-            <label>The problem in a few lines</label>
-            <textarea name="message" required placeholder="The book is out. Strangers do not find it."></textarea>
+            <label>Project timeline</label>
+            <select name="timeline" required>
+              <option value="">Select a timeline</option>
+              <option>As soon as possible</option>
+              <option>Within 2 weeks</option>
+              <option>30 days</option>
+              <option>60 days</option>
+              <option>Ongoing retainer</option>
+            </select>
+            <label>What should this work do</label>
+            <textarea name="message" required></textarea>
             <p style="margin-top:18px;"><button class="pill" type="submit">Get started</button></p>
           </form>
         </div>
       </div>
     </div>
   </main>
-  <script src="script.js?v=30"></script>
+  <script src="script.js?v=31"></script>
 </body>
 </html>
