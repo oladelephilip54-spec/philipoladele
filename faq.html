@@ -5,17 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ | Philip Oladele</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
-  <link rel="stylesheet" href="styles.css?v=24" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=25" />
+  <style>
+    .page { padding-top: 120px; padding-bottom: 100px; }
+    .page h2 { font-size: clamp(2.6rem, 7vw, 5rem); line-height: .95; max-width: 16ch; }
+    .faq-item { padding: 26px 0; border-top: 1px solid rgba(240,217,160,.15); }
+    .faq-item h3 { font-size: 1.5rem; margin:0 0 8px; }
+    .faq-item p { margin:0; color:#cfc6b6; max-width: 60ch; }
+    .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; background:#f0d9a0; color:#1a140c; }
+  </style>
 </head>
 <body>
   <div class="bg-layer"></div>
   <header class="header" id="site-header">
     <nav class="nav wrap">
-      <a class="logo" href="index.html">Philip Oladele</a>
+      <a class="logo" href="/">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="process.html">Process</a></li>
         <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav-link" href="projects.html">Work</a></li>
+        <li><a class="nav-link" href="reviews.html">Reviews</a></li>
         <li><a class="nav-link active" href="faq.html">FAQ</a></li>
         <li><a class="nav-link nav-cta" href="contact.html">Begin</a></li>
       </ul>
@@ -24,19 +37,17 @@
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker reveal">FAQ</p>
-      <h2 class="reveal">Questions before the work starts</h2>
-      <div class="quotes" style="grid-template-columns:1fr;">
-        <article class="quote reveal"><p>How long does a campaign take?</p><cite>$500 is about two weeks. Author launch is 30 days. Growth is 90 days. Command is six months.</cite></article>
-        <article class="quote reveal"><p>What do you need from me?</p><cite>Page access, brand notes, book or product files, one decision maker.</cite></article>
-        <article class="quote reveal"><p>Who do you work with?</p><cite>Authors, personal brands and businesses. Much of the published work is with US authors.</cite></article>
-        <article class="quote reveal"><p>Do you guarantee sales?</p><cite>No. We guarantee the system, the calendar and the reporting.</cite></article>
-        <article class="quote reveal"><p>Where are you based?</p><cite>Nigeria. Clients are local and international.</cite></article>
-        <article class="quote reveal"><p>How do I pay?</p><cite>After the scorecard. Work starts when the first invoice is cleared.</cite></article>
-      </div>
-      <p class="reveal" style="margin-top:28px;"><a class="btn btn-gold" href="https://wa.me/2348162287814">WhatsApp the studio</a></p>
+      <p class="kicker">FAQ</p>
+      <h2>Before we start.</h2>
+      <div class="faq-item"><h3>How long does it take?</h3><p>$500 is about two weeks. Author launch is 30 days. Growth is 90 days. Command is six months.</p></div>
+      <div class="faq-item"><h3>What do you need from me?</h3><p>Page access, brand notes, book or product files, and one decision maker.</p></div>
+      <div class="faq-item"><h3>Who is this for?</h3><p>Authors, personal brands and businesses that want a system. Much of the live work is with US authors.</p></div>
+      <div class="faq-item"><h3>Do you guarantee sales?</h3><p>No. We guarantee the system, the calendar and the reporting.</p></div>
+      <div class="faq-item"><h3>Where are you based?</h3><p>Nigeria. Clients are local and international. Work runs on WhatsApp and calls.</p></div>
+      <div class="faq-item"><h3>How do I pay?</h3><p>After the scorecard. Work starts when the first invoice is cleared.</p></div>
+      <p style="margin-top:36px;"><a class="pill" href="https://wa.me/2348162287814">WhatsApp the studio</a></p>
     </div>
   </main>
-  <script src="script.js?v=24"></script>
+  <script src="script.js?v=25"></script>
 </body>
 </html>
