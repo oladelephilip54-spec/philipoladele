@@ -6,25 +6,27 @@
   <title>Contact Philip Oladele | Start a Project</title>
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=31" />
+  <link rel="stylesheet" href="styles.css?v=32" />
   <style>
     .page { padding-top:110px; padding-bottom:90px; }
     .page h2 { font-size:clamp(2.2rem,6vw,4.2rem); line-height:.95; max-width:14ch; }
     .split { display:grid; grid-template-columns:1.05fr .95fr; gap:42px; }
-    .chat { background:rgba(12,10,8,.8); border:1px solid rgba(240,217,160,.16); border-radius:24px; padding:20px; min-height:420px; }
-    .line { display:flex; gap:10px; align-items:flex-end; margin:14px 0; opacity:0; transform:translateY(12px); animation:rise .55s cubic-bezier(.22,1,.36,1) forwards; }
+    .chat { background:rgba(12,10,8,.8); border:1px solid rgba(240,217,160,.16); border-radius:24px; padding:20px; min-height:460px; }
+    .line { display:flex; gap:10px; align-items:flex-end; margin:14px 0; animation:pop .35s cubic-bezier(.22,1,.36,1); }
     .line.right { flex-direction:row-reverse; }
-    .line:nth-child(1){animation-delay:.2s} .line:nth-child(2){animation-delay:.7s}
-    .line:nth-child(3){animation-delay:1.2s} .line:nth-child(4){animation-delay:1.8s}
-    .line:nth-child(5){animation-delay:2.4s} .line:nth-child(6){animation-delay:3s}
-    @keyframes rise { to { opacity:1; transform:none; } }
+    @keyframes pop { from { opacity:0; transform:translateY(10px) scale(.98); } to { opacity:1; transform:none; } }
     .av { width:36px; height:36px; border-radius:50%; object-fit:cover; object-position:center 18%; flex:none; }
     .av.g { background:#2a241c; color:#f0d9a0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; }
     .bubble { max-width:78%; padding:12px 14px; border-radius:18px; line-height:1.45; }
     .guest { background:#1c1814; color:#f3ead8; border-bottom-left-radius:4px; }
     .host { background:#f0d9a0; color:#1a140c; border-bottom-right-radius:4px; }
-    .who { font-size:11px; color:#b7aa94; margin:0 46px 2px; }
+    .who { font-size:11px; color:#b7aa94; margin:0 0 4px; }
     .who.r { text-align:right; }
+    .typing { display:flex; gap:5px; padding:12px 16px; background:#1c1814; border-radius:18px; width:fit-content; }
+    .typing i { width:7px; height:7px; border-radius:50%; background:#f0d9a0; display:block; animation:blink 1s infinite; }
+    .typing i:nth-child(2){ animation-delay:.15s; }
+    .typing i:nth-child(3){ animation-delay:.3s; }
+    @keyframes blink { 0%,80%,100%{ opacity:.25; transform:translateY(0);} 40%{ opacity:1; transform:translateY(-3px);} }
     .step { letter-spacing:.18em; text-transform:uppercase; color:#d4af6a; font-size:11px; margin:0 0 10px; }
     form label { display:block; margin:12px 0 6px; font-size:13px; color:#d4af6a; }
     form input, form textarea, form select { width:100%; background:#120f0c; border:1px solid rgba(240,217,160,.22); color:#f3ead8; padding:12px; border-radius:10px; }
@@ -59,14 +61,7 @@
       <div class="split" style="margin-top:32px;">
         <div>
           <p class="step">The conversation</p>
-          <div class="chat">
-            <div class="line"><div class="av g">CL</div><div><div class="who">Client</div><div class="bubble guest">Know anyone who can run social and a page for a launch?</div></div></div>
-            <div class="line right"><img class="av" src="philip-oladele.jpg" alt="Philip Oladele" /><div><div class="who r">Philip Oladele</div><div class="bubble host">That is the studio. Social, UI/UX, trailers. Scorecard first. Then we pick the plan.</div></div></div>
-            <div class="line"><div class="av g">CL</div><div><div class="who">Client</div><div class="bubble guest">How fast?</div></div></div>
-            <div class="line right"><img class="av" src="philip-oladele.jpg" alt="Philip Oladele" /><div><div class="who r">Philip Oladele</div><div class="bubble host">Trailer in days. Sprint in two weeks. Site on a timeline you choose on the form.</div></div></div>
-            <div class="line"><div class="av g">CL</div><div><div class="who">Client</div><div class="bubble guest">Send me the start link.</div></div></div>
-            <div class="line right"><img class="av" src="philip-oladele.jpg" alt="Philip Oladele" /><div><div class="who r">Philip Oladele</div><div class="bubble host">philipoladele.com/contact · Get started on the right.</div></div></div>
-          </div>
+          <div class="chat" id="chat"></div>
         </div>
         <div>
           <p class="step">Get started</p>
@@ -101,6 +96,48 @@
       </div>
     </div>
   </main>
-  <script src="script.js?v=31"></script>
+  <script src="script.js?v=32"></script>
+  <script>
+    const chat = document.getElementById("chat");
+    const msgs = [
+      { side: "left", name: "Client", text: "Know anyone who can run social and a page for a launch?" },
+      { side: "right", name: "Philip Oladele", text: "That is the studio. Social, UI/UX, trailers. Scorecard first. Then we pick the plan." },
+      { side: "left", name: "Client", text: "How fast?" },
+      { side: "right", name: "Philip Oladele", text: "Trailer in days. Sprint in two weeks. Site on a timeline you choose on the form." },
+      { side: "left", name: "Client", text: "Send me the start link." },
+      { side: "right", name: "Philip Oladele", text: "philipoladele.com/contact. Get started on the right." }
+    ];
+    function typing(side) {
+      const wrap = document.createElement("div");
+      wrap.className = "line" + (side === "right" ? " right" : "");
+      wrap.id = "typing";
+      wrap.innerHTML = side === "right"
+        ? '<img class="av" src="philip-oladele.jpg" alt="" /><div class="typing"><i></i><i></i><i></i></div>'
+        : '<div class="av g">CL</div><div class="typing"><i></i><i></i><i></i></div>';
+      chat.appendChild(wrap);
+      chat.scrollTop = chat.scrollHeight;
+    }
+    function say(m) {
+      const el = document.createElement("div");
+      el.className = "line" + (m.side === "right" ? " right" : "");
+      const av = m.side === "right"
+        ? '<img class="av" src="philip-oladele.jpg" alt="Philip Oladele" />'
+        : '<div class="av g">CL</div>';
+      el.innerHTML = av + '<div><div class="who' + (m.side === "right" ? " r" : "") + '">' + m.name + '</div><div class="bubble ' + (m.side === "right" ? "host" : "guest") + '">' + m.text + "</div></div>";
+      chat.appendChild(el);
+      chat.scrollTop = chat.scrollHeight;
+    }
+    async function play() {
+      for (const m of msgs) {
+        typing(m.side);
+        await new Promise(r => setTimeout(r, m.side === "right" ? 1100 : 800));
+        const t = document.getElementById("typing");
+        if (t) t.remove();
+        say(m);
+        await new Promise(r => setTimeout(r, 500));
+      }
+    }
+    play();
+  </script>
 </body>
 </html>
