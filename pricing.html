@@ -3,19 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing | Philip Oladele</title>
-  <meta name="description" content="Author plans from $500. Brand and business retainers from $2000, $6000 and $18000." />
+  <title>Pricing | Social, Web, Book Campaigns | Philip Oladele</title>
+  <meta name="description" content="Book trailers from $100. Social media management from $500 a month. UI/UX and websites from $800." />
   <link rel="icon" type="image/png" href="https://philipoladele.com/favicon.png" />
-  <link rel="stylesheet" href="styles.css?v=24" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=26" />
+  <style>
+    .page { padding-top: 120px; padding-bottom: 100px; }
+    .page h2 { font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: .95; max-width: 18ch; }
+    .page .lede { font-size: 1.12rem; max-width: 48ch; color: #cfc6b6; }
+    .plan-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 28px; }
+    .plan-grid.four { grid-template-columns: repeat(4,1fr); }
+    .plan { background: rgba(12,10,8,.7); border:1px solid rgba(240,217,160,.18); padding: 28px 24px 32px; border-radius: 18px; }
+    .plan small { letter-spacing:.2em; text-transform:uppercase; color:#d4af6a; font-size:11px; }
+    .plan h3 { font-size: 2.4rem; margin: 10px 0 12px; color:#f5efe3; }
+    .plan ul { margin: 16px 0 22px; padding-left: 18px; color:#cfc6b6; }
+    .plan li { margin: 8px 0; }
+    .pill { display:inline-block; border-radius:999px; padding:12px 18px; font-weight:600; }
+    .pill-gold { background:#f0d9a0; color:#1a140c; }
+    .pill-line { border:1px solid rgba(240,217,160,.45); color:#f0d9a0; }
+    @media (max-width: 1100px) { .plan-grid, .plan-grid.four { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 700px) { .plan-grid, .plan-grid.four { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
   <div class="bg-layer"></div>
   <header class="header" id="site-header">
     <nav class="nav wrap">
-      <a class="logo" href="index.html">Philip Oladele</a>
+      <a class="logo" href="/">Philip Oladele</a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="/">Home</a></li>
         <li><a class="nav-link" href="about.html">About</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
         <li><a class="nav-link" href="process.html">Process</a></li>
@@ -30,30 +47,40 @@
   </header>
   <main class="section page">
     <div class="wrap">
-      <p class="kicker reveal">Pricing</p>
-      <h2 class="reveal">Clear plans. Clear deliverables.</h2>
-      <p class="lede reveal">Authors start at $500. Brands start at $2,000 and scale to $6,000 and $18,000.</p>
-      <p class="kicker reveal" style="margin-top:48px;">Authors and individuals</p>
-      <div class="cards">
-        <article class="card reveal"><small>Start</small><h3>$500</h3><p>Two week sprint.</p><ul><li>15 minute scorecard</li><li>2 week plan, one platform</li><li>8 posts or 1 trailer</li><li>Bio or landing rewrite</li><li>WhatsApp support</li></ul><p style="margin-top:16px;"><a class="btn btn-line" href="contact.html">Start at $500</a></p></article>
-        <article class="card reveal"><small>Launch</small><h3>$1,000</h3><p>30 day author launch.</p><ul><li>Audience map</li><li>30 day calendar</li><li>Trailer plus 16 posts</li><li>Amazon and social links</li><li>Weekly report</li></ul><p style="margin-top:16px;"><a class="btn btn-gold" href="contact.html">Start at $1,000</a></p></article>
-        <article class="card reveal"><small>Author brand</small><h3>$2,000</h3><p>60 day system.</p><ul><li>Two month posting</li><li>Trailer and ads creative</li><li>Simple site or landing</li><li>On-page SEO</li><li>Monthly scorecard</li></ul><p style="margin-top:16px;"><a class="btn btn-line" href="contact.html">Start at $2,000</a></p></article>
+      <p class="kicker">Pricing</p>
+      <h2>Three practices. Honest prices.</h2>
+      <p class="lede">Social media management, UI/UX and websites, book trailers and campaigns.</p>
+
+      <p class="kicker" style="margin-top:64px;">01 / Book promotion</p>
+      <h2>Trailers from $100.</h2>
+      <div class="plan-grid four">
+        <article class="plan"><small>Trailer</small><h3>$100</h3><p>One book trailer cut, ready to post.</p><ul><li>15 to 45 second cut</li><li>Title, author and hook on screen</li><li>Square and landscape exports</li><li>One revision</li></ul><a class="pill pill-gold" href="contact.html">Book a trailer</a></article>
+        <article class="plan"><small>Sprint</small><h3>$500</h3><p>Two week launch push.</p><ul><li>Scorecard call</li><li>Trailer or 8 posts</li><li>Bio or landing rewrite</li><li>WhatsApp support</li></ul><a class="pill pill-line" href="contact.html">Start sprint</a></article>
+        <article class="plan"><small>Launch month</small><h3>$1,000</h3><p>Thirty days around one book.</p><ul><li>Trailer plus 16 posts</li><li>Calendar and captions</li><li>Amazon and social links</li><li>Weekly report</li></ul><a class="pill pill-line" href="contact.html">Launch the book</a></article>
+        <article class="plan"><small>Author system</small><h3>$2,000</h3><p>Sixty days. Presence plus page.</p><ul><li>Two months of posting</li><li>Trailer and ads cuts</li><li>Simple page + SEO basics</li><li>Monthly scorecard</li></ul><a class="pill pill-line" href="contact.html">Build the author</a></article>
       </div>
-      <p class="kicker reveal" style="margin-top:56px;">Brands and businesses</p>
-      <h2 class="reveal">From $2,000. Then 3x.</h2>
-      <div class="cards">
-        <article class="card reveal"><small>Foundation</small><h3>$2,000</h3><p>One month.</p><ul><li>Positioning</li><li>Two platforms</li><li>12 to 16 posts</li><li>Community replies</li><li>Month-end report</li></ul><p style="margin-top:16px;"><a class="btn btn-line" href="contact.html">Book Foundation</a></p></article>
-        <article class="card reveal"><small>Growth</small><h3>$6,000</h3><p>Three months.</p><ul><li>Everything in Foundation</li><li>Website or landing</li><li>SEO map</li><li>Light ads</li><li>Biweekly call</li></ul><p style="margin-top:16px;"><a class="btn btn-gold" href="contact.html">Book Growth</a></p></article>
-        <article class="card reveal"><small>Command</small><h3>$18,000</h3><p>Six months.</p><ul><li>Social, web, SEO, promotion</li><li>Influencer bench</li><li>Trailers and landing tests</li><li>Esthanova and Daniel</li><li>Monthly live review</li></ul><p style="margin-top:16px;"><a class="btn btn-line" href="contact.html">Book Command</a></p></article>
+
+      <p class="kicker" style="margin-top:72px;">02 / UI/UX and websites</p>
+      <h2>Pages that ask for the next step.</h2>
+      <div class="plan-grid">
+        <article class="plan"><small>Landing</small><h3>$800</h3><p>One page for a book, offer or waitlist.</p><ul><li>Structure and copy blocks</li><li>Mobile first layout</li><li>Form to Gmail or WhatsApp</li><li>One revision</li></ul><a class="pill pill-line" href="contact.html">Build a landing</a></article>
+        <article class="plan"><small>Author or personal site</small><h3>$1,500</h3><p>Home, about, work, contact.</p><ul><li>Up to 5 pages</li><li>UI layout and responsive build</li><li>SEO titles and preview image</li><li>Contact form</li></ul><a class="pill pill-gold" href="contact.html">Build the site</a></article>
+        <article class="plan"><small>Business site</small><h3>$3,500</h3><p>Services, proof and a clear begin path.</p><ul><li>Up to 8 pages</li><li>UI/UX map before build</li><li>On-page SEO</li><li>Two revisions</li></ul><a class="pill pill-line" href="contact.html">Build the brand site</a></article>
+      </div>
+      <div class="plan-grid" style="margin-top:18px;">
+        <article class="plan"><small>Full UI/UX + build</small><h3>$6,000</h3><p>Research, wireframes, design system and a built site.</p><ul><li>Short research and sitemap</li><li>Wireframes then high fidelity UI</li><li>Build, launch and handoff</li><li>30 days of fix support</li></ul><a class="pill pill-gold" href="contact.html">Start UI/UX</a></article>
+      </div>
+
+      <p class="kicker" style="margin-top:72px;">03 / Social media management</p>
+      <h2>Monthly retainers.</h2>
+      <div class="plan-grid">
+        <article class="plan"><small>Manage</small><h3>$500 / mo</h3><p>One platform. Steady posting.</p><ul><li>8 to 12 posts</li><li>Captions and simple graphics</li><li>Scheduling</li><li>Month-end note</li></ul><a class="pill pill-line" href="contact.html">Start manage</a></article>
+        <article class="plan"><small>Grow</small><h3>$1,000 / mo</h3><p>Two platforms. Content plus replies.</p><ul><li>16 posts</li><li>Stories or short clips</li><li>Community replies</li><li>Weekly check in</li></ul><a class="pill pill-gold" href="contact.html">Start grow</a></article>
+        <article class="plan"><small>Lead</small><h3>$2,000 / mo</h3><p>Three platforms. Strategy in the room.</p><ul><li>20 to 24 posts</li><li>Trailer or ads cuts as needed</li><li>Daily replies in work hours</li><li>Monthly scorecard call</li></ul><a class="pill pill-line" href="contact.html">Start lead</a></article>
       </div>
     </div>
   </main>
-  <footer>
-    <div class="foot wrap">
-      <div>Philip Oladele</div>
-      <div><a href="faq.html">FAQ</a><a href="https://wa.me/2348162287814">WhatsApp</a></div>
-    </div>
-  </footer>
-  <script src="script.js?v=24"></script>
+  <a href="https://wa.me/2348162287814" class="pill pill-gold" style="position:fixed;right:18px;bottom:18px;z-index:80;">WhatsApp</a>
+  <script src="script.js?v=26"></script>
 </body>
 </html>
