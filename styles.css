@@ -521,13 +521,7 @@ footer { b.metrics {
   }
 }
 /* ===== MOBILE BLACK SCREEN FIX ===== */
-@media (max-width: 900px) {
-  #preloader {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
+@media (max-width: 900px) 
 
   #fire-embers {
     display: none !important;
