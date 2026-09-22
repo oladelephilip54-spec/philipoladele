@@ -717,3 +717,111 @@ footer { b.metrics {
     animation: none;
   }
 }
+/* ===== 3D NEON METRIC CARDS ===== */
+.metrics {
+  perspective: 1200px;
+  gap: 16px;
+}
+
+.metric {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  background: linear-gradient(165deg, rgba(28, 22, 12, 0.92), rgba(8, 6, 4, 0.96)) !important;
+  border: 1px solid rgba(212, 175, 106, 0.28) !important;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(212, 175, 106, 0.08);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.metric::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 20%, rgba(240, 217, 160, 0.28), transparent 42%);
+  filter: blur(28px);
+  opacity: 0.7;
+  pointer-events: none;
+  transform: translateZ(-20px);
+}
+
+.metric::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%);
+  mix-blend-mode: screen;
+}
+
+.metric b,
+.metric .count {
+  position: relative;
+  z-index: 1;
+  color: #f0d9a0 !important;
+  text-shadow: 0 0 18px rgba(240, 217, 160, 0.45);
+}
+
+.metric span {
+  position: relative;
+  z-index: 1;
+  color: #cbbca3 !important;
+}
+
+.metric em {
+  position: relative;
+  z-index: 1;
+  color: #7ee0c8 !important;
+  text-shadow: 0 0 10px rgba(126, 224, 200, 0.35);
+}
+
+/* neon variants that still match the site */
+.metric:nth-child(4n+1) {
+  border-color: rgba(240, 217, 160, 0.4) !important;
+}
+.metric:nth-child(4n+2) {
+  border-color: rgba(212, 175, 106, 0.45) !important;
+}
+.metric:nth-child(4n+2) b,
+.metric:nth-child(4n+2) .count {
+  color: #d4af6a !important;
+  text-shadow: 0 0 18px rgba(212, 175, 106, 0.5);
+}
+.metric:nth-child(4n+3) {
+  border-color: rgba(166, 124, 61, 0.5) !important;
+}
+.metric:nth-child(4n+3) b,
+.metric:nth-child(4n+3) .count {
+  color: #e8c547 !important;
+}
+.metric:nth-child(4n+4) {
+  border-color: rgba(126, 224, 200, 0.28) !important;
+}
+.metric:nth-child(4n+4) b,
+.metric:nth-child(4n+4) .count {
+  color: #f5efe3 !important;
+  text-shadow: 0 0 16px rgba(245, 239, 227, 0.28);
+}
+
+.metric:hover {
+  transform: translateY(-8px) rotateX(8deg) rotateY(-7deg) translateZ(16px);
+  border-color: rgba(240, 217, 160, 0.7) !important;
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(212, 175, 106, 0.28),
+    0 0 48px rgba(212, 175, 106, 0.12);
+}
+
+@media (max-width: 900px) {
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    perspective: none;
+  }
+  .metric:hover {
+    transform: translateY(-4px);
+  }
+}
