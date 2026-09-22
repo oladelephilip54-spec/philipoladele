@@ -262,11 +262,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 })();
-// Force-hide preloader on mobile
-document.addEventListener('DOMContentLoaded', function () {
-  var pre = document.getElementById('preloader');
-  if (pre) {
-    pre.classList.add('hidden');
-    pre.style.display = 'none';
-  }
-});
