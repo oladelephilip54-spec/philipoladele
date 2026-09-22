@@ -2,61 +2,34 @@
 <html lang="en">
 <head>
   <style>
-    /* ===== MOBILE FIXES ===== */
-@media (max-width: 768px) {
-  .hgc-ba {
-    padding: 3.5rem 1rem 4.5rem;
-  }
-
-  .hgc-ba__header {
-    margin-bottom: 2rem;
-  }
-
-  .hgc-ba__header h2 {
-    font-size: 1.7rem;
-  }
-
+/* ===== STRONG MOBILE FIX ===== */
+@media (max-width: 900px) {
   .hgc-ba__grid {
-    grid-template-columns: 1fr;          /* stack cards vertically */
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.6rem !important;
+  }
+
+  .hgc-ba {
+    padding: 3.2rem 1rem 4.5rem !important;
   }
 
   .ba-card {
-    border-radius: 14px;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .ba-slider {
-    aspect-ratio: 16 / 11;               /* slightly taller on mobile for better visibility */
+    aspect-ratio: 16 / 11 !important;
   }
 
   .ba-handle__circle {
-    width: 42px;
-    height: 42px;
+    width: 44px !important;
+    height: 44px !important;
   }
 
   .ba-stats {
-    font-size: 1rem;
-    padding: 0.9rem 1rem 1.1rem;
-  }
-
-  .ba-stats span {
-    font-size: 0.68rem;
-  }
-
-  .ba-card__titles {
-    font-size: 0.7rem;
-    padding: 0.85rem 1rem 0.3rem;
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 400px) {
-  .hgc-ba {
-    padding: 3rem 0.75rem 4rem;
-  }
-
-  .ba-stats {
-    font-size: 0.95rem;
+    font-size: 1.05rem !important;
+    padding: 0.95rem 1.1rem 1.15rem !important;
   }
 }
 /* ===== ADVANCED CLIP-PATH + 3D BEFORE/AFTER ===== */
