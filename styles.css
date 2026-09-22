@@ -602,34 +602,104 @@ footer { b.metrics {
   }
 }
 
-/* ===== SIMPLE SPINNING RING AROUND HERO BUTTONS ===== */
+/* ===== NEON 3D HERO BUTTONS ===== */
 .actions .btn.btn-gold,
 .actions .btn.btn-line {
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.actions .btn.btn-gold {
+  background: linear-gradient(180deg, #ffe7a8 0%, #d4af6a 42%, #8a5a18 100%);
+  color: #1a1206;
+  border: 1px solid #f3d48a;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 -8px 16px rgba(80, 40, 0, 0.35) inset,
+    0 10px 24px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(212, 175, 106, 0.45),
+    0 0 36px rgba(212, 175, 106, 0.2);
+  animation: neonGold 2.4s ease-in-out infinite;
+}
+
+.actions .btn.btn-line {
+  background: linear-gradient(180deg, rgba(30, 24, 14, 0.95) 0%, rgba(8, 6, 4, 0.98) 100%);
+  color: #f0d9a0;
+  border: 1px solid #d4af6a;
+  box-shadow:
+    0 1px 0 rgba(255, 220, 150, 0.2) inset,
+    0 10px 24px rgba(0, 0, 0, 0.45),
+    0 0 16px rgba(212, 175, 106, 0.28),
+    0 0 28px rgba(212, 175, 106, 0.12);
+  animation: neonLine 2.4s ease-in-out infinite;
 }
 
 .actions .btn.btn-gold::before,
 .actions .btn.btn-line::before {
   content: "";
   position: absolute;
-  inset: -8px;
-  border-radius: 999px;
-  border: 2px solid transparent;
-  border-top-color: #f0d9a0;
-  border-right-color: #d4af6a;
-  animation: btnSpin 1.8s linear infinite;
+  left: -40%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  animation: neonSweep 3s ease-in-out infinite;
   pointer-events: none;
 }
 
-.actions .btn.btn-gold:hover::before,
-.actions .btn.btn-line:hover::before {
-  animation-duration: 0.8s;
-  box-shadow: 0 0 14px rgba(212, 175, 106, 0.45);
+.actions .btn.btn-gold:hover,
+.actions .btn.btn-line:hover {
+  transform: translateY(-3px) scale(1.02);
+  filter: brightness(1.08);
 }
 
-@keyframes btnSpin {
-  to { transform: rotate(360deg); }
+.actions .btn.btn-gold:active,
+.actions .btn.btn-line:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+@keyframes neonGold {
+  0%, 100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.45) inset,
+      0 -8px 16px rgba(80, 40, 0, 0.35) inset,
+      0 10px 24px rgba(0, 0, 0, 0.45),
+      0 0 16px rgba(212, 175, 106, 0.35),
+      0 0 30px rgba(212, 175, 106, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.55) inset,
+      0 -8px 16px rgba(80, 40, 0, 0.35) inset,
+      0 12px 28px rgba(0, 0, 0, 0.5),
+      0 0 26px rgba(255, 220, 140, 0.7),
+      0 0 48px rgba(212, 175, 106, 0.35);
+  }
+}
+
+@keyframes neonLine {
+  0%, 100% {
+    box-shadow:
+      0 1px 0 rgba(255, 220, 150, 0.18) inset,
+      0 10px 24px rgba(0, 0, 0, 0.45),
+      0 0 12px rgba(212, 175, 106, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 220, 150, 0.28) inset,
+      0 12px 28px rgba(0, 0, 0, 0.5),
+      0 0 22px rgba(240, 217, 160, 0.55),
+      0 0 40px rgba(212, 175, 106, 0.25);
+  }
+}
+
+@keyframes neonSweep {
+  0% { left: -40%; }
+  55%, 100% { left: 120%; }
 }
 
 @media (max-width: 760px) {
@@ -637,9 +707,13 @@ footer { b.metrics {
   .actions .btn.btn-line {
     width: 100%;
   }
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .actions .btn.btn-gold,
+  .actions .btn.btn-line,
   .actions .btn.btn-gold::before,
   .actions .btn.btn-line::before {
-    inset: -7px;
+    animation: none;
   }
 }
