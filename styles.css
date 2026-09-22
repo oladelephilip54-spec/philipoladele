@@ -502,3 +502,19 @@ footer { b.metrics {
     height: 22px;
   }
 }
+/* ===== EMERGENCY MOBILE FIX ===== */
+@media (max-width: 900px) {
+  #fire-embers {
+    display: none !important;   /* temporarily hide the particle canvas */
+  }
+
+  body, main, .hero, section {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+  }
+
+  .header {
+    z-index: 1000;
+  }
+}
