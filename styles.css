@@ -518,3 +518,42 @@ footer { b.metrics {
     z-index: 1000;
   }
 }
+/* ===== MOBILE BLACK SCREEN FIX ===== */
+@media (max-width: 900px) {
+  #preloader {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  #fire-embers {
+    display: none !important;
+  }
+
+  .header,
+  #site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(5, 4, 3, 0.92) !important;
+  }
+
+  main,
+  .hero,
+  .hero.wrap,
+  body {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+  }
+
+  .hero {
+    padding-top: 110px !important;
+  }
+}
