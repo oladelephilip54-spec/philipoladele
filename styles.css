@@ -825,3 +825,11 @@ footer { b.metrics {
     transform: translateY(-4px);
   }
 }
+.metrics .metric {
+  opacity: 1 !important;
+  transform: none;
+}
+.metrics .metric.reveal {
+  opacity: 1 !important;
+  transform: none;
+}
