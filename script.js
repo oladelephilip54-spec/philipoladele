@@ -300,3 +300,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 })();
+// ===== FIX METRICS VISIBILITY =====
+(function () {
+  var cards = document.querySelectorAll(".metric");
+  cards.forEach(function (card) {
+    card.classList.add("visible");
+    card.style.opacity = "1";
+    card.style.transform = "none";
+  });
+
+  if (!window.gsap) return;
+
+  if (window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  gsap.fromTo(
+    ".metric",
+    { y: 28, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.7,
+      stagger: 0.08,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".metrics",
+        start: "top 90%",
+        once: true
+      }
+    }
+  );
+})();
