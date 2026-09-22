@@ -306,5 +306,59 @@
     </div>
   </main>
   <script src="script.js?v=24"></script>
+  <script src="script.js?v=24"></script>
+
+  <script>
+  // Advanced drag logic with clip-path + light 3D tilt
+  document.querySelectorAll('[data-ba]').forEach(slider => {
+    const before   = slider.querySelector('.before');
+    const handle   = slider.querySelector('.ba-handle');
+    const threeD   = slider.querySelector('.ba-3d');
+    let isDragging = false;
+
+    const setPosition = (clientX) => {
+      const rect = slider.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(4, Math.min(96, pct));
+
+      before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left = `${pct}%`;
+
+      const tilt = (pct - 50) / 18;
+      threeD.style.transform = `rotateY(${tilt}deg)`;
+    };
+
+    const start = (e) => {
+      isDragging = true;
+      slider.classList.add('dragging');
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      setPosition(x);
+    };
+
+    const move = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      setPosition(x);
+    };
+
+    const end = () => {
+      isDragging = false;
+      slider.classList.remove('dragging');
+      threeD.style.transform = 'rotateY(0deg)';
+    };
+
+    slider.addEventListener('mousedown', start);
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+
+    slider.addEventListener('touchstart', start, { passive: true });
+    window.addEventListener('touchmove', move, { passive: false });
+    window.addEventListener('touchend', end);
+  });
+  </script>
+
+</body>
+</html>
 </body>
 </html>
