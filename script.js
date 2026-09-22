@@ -39,10 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (toggle && menu) {
     toggle.addEventListener("click", function () {
       menu.classList.toggle("active");
+      menu.classList.toggle("open");
     });
     menu.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         menu.classList.remove("active");
+        menu.classList.remove("open");
       });
     });
   }
