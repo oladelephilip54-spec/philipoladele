@@ -320,8 +320,10 @@ footer { b.metrics {
 }
 
 /* ===== FIRE + WIND + EMBERS + REACTIVE HEAT SHIMMER ===== */
-.nav-menu {
-  position: relative;
+@media (min-width: 761px) {
+  .nav-menu {
+    position: relative;
+  }
 }
 
 .nav-link.fire {
@@ -555,5 +557,53 @@ footer { b.metrics {
 
   .hero {
     padding-top: 110px !important;
+  }
+}
+/* ===== FIX BROKEN MOBILE MENU / BLACK SCREEN ===== */
+@media (max-width: 760px) {
+  #fire-embers {
+    display: none !important;
+  }
+
+  #preloader {
+    display: none !important;
+  }
+
+  .nav-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    left: auto !important;
+    height: 100vh !important;
+    width: 80% !important;
+    max-width: 320px !important;
+    background: #0c0a07 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 90px 28px !important;
+    gap: 20px !important;
+    z-index: 2000 !important;
+    overflow-y: auto !important;
+  }
+
+  .nav-menu.active {
+    right: 0 !important;
+  }
+
+  .nav-toggle {
+    display: block !important;
+    z-index: 2100 !important;
+  }
+
+  .header,
+  #site-header {
+    height: auto !important;
+    min-height: 0 !important;
+    bottom: auto !important;
+    z-index: 1000 !important;
+  }
+
+  .hero {
+    padding-top: 120px !important;
   }
 }
