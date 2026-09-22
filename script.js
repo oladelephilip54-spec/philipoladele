@@ -262,3 +262,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 })();
+// ===== GSAP + TILT =====
+(function () {
+  if (!window.gsap) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".hero h1, .hero .kicker, .hero p, .actions, .stats", {
+    y: 28,
+    opacity: 0,
+    duration: 0.9,
+    stagger: 0.08,
+    ease: "power3.out",
+    delay: 0.15
+  });
+
+  gsap.from(".metric", {
+    scrollTrigger: {
+      trigger: ".metrics",
+      start: "top 85%"
+    },
+    y: 40,
+    opacity: 0,
+    rotateX: 18,
+    duration: 0.8,
+    stagger: 0.08,
+    ease: "power3.out"
+  });
+
+  if (window.VanillaTilt) {
+    VanillaTilt.init(document.querySelectorAll(".metric"), {
+      max: 10,
+      speed: 600,
+      glare: true,
+      "max-glare": 0.18,
+      scale: 1.03
+    });
+  }
+})();
